@@ -16,11 +16,11 @@ minimal_mistakes_skin    : "air" # "default" "air", "aqua", "contrast", "dark", 
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Site Title"
+title                    : "Lines"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Your Name"
-description              : "An amazing website."
+name                     : "Keepinmindsh"
+description              : "Lines for code"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -274,6 +274,7 @@ defaults:
       path: ""
       type: posts
     values:
+      show_date : true
       layout: single
       author_profile: true
       read_time: true
