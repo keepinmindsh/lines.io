@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "air" # "default" "air", "aqua", "contrast", "dark", 
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Lines"
+title                    : "Lines for Code"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Keepinmindsh"
@@ -97,7 +97,7 @@ author:
   name             : "Lines"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "한줄 한줄의 소중한 코드를 위해서"
-  location         : "Somewhere"
+  location         : 
   email            :
   links:
     - label: "Email"
@@ -130,7 +130,7 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url:
+      url: https://github.com/keepinmindsh
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
