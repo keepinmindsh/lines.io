@@ -17,6 +17,8 @@ last_modified_at: 2019-04-13T08:06:00-05:00
 
 2. 활용성 
 
+![](https://keepinmindsh.github.io/lines/assets/img/abstract_factory.png){: .align-center}
+
 3. 코드 예제 
 
 
