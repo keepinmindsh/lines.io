@@ -57,7 +57,7 @@ last_modified_at: 2019-04-13T08:06:00-05:00
   - 원형 패턴을 이용해서 구현할 때도 있음
   - 구체 팩토리는 단일체 패턴을 이용해 구현하는 경우가 많음
 
-# 코드 예제 
+# 코드 예제 -- 기본 샘플 
 
 ***
 
@@ -176,6 +176,197 @@ last_modified_at: 2019-04-13T08:06:00-05:00
   }
 ```
 
+# 코드 샘플 - 스타크래프트 
+
+- 요구사항 정의 
+  - 스타 크래프트에서는 다양한 유닛이 존재합니다 탱크와 골리앗을 생산할 수 있는 Factory 마린, 메딕, 파이어뱃을 생산할 수 있는 Barrack 레이스, 사이언스 베슬, 베틀 크루저를 생산할 수 있는 Starport
++ 요구사항의 공통화
+  - 모든 건물은 유닛을 생산한다.
+  - 모든 시스템 건물은 추가적으로 지을수 있어야 한다. 하지만 각 건물의 기능이 추가적으로 변경되지 않는다.
+  - 모든 유닛은 공격이 주된 목적을 가진다.
+{: .notice--primary}
 
 
+```java
+  package DesignPattern.gof_abstractFactory.sample003;
+
+  public interface BuilingConstructor {
+      public Unit createUnitOrNull(String unitType);
+  }
+```
+```java
+  package DesignPattern.gof_abstractFactory.sample003;
+
+  public class Factory implements BuilingConstructor {
+      public Unit createUnitOrNull(String unitType) {
+          switch (unitType){
+              case "siegetank" :
+                  return new SiegeTank();
+              default:
+                  return null;
+          }
+      }
+  } 
+```
+
+```java
+  package DesignPattern.gof_abstractFactory.sample003;
+
+  public class Barrack implements BuilingConstructor {
+      public Unit createUnitOrNull(String unitType) {
+          switch (unitType){
+              case "marine" :
+                  return new Marine();
+              case "firebat" :
+                  return new FireBat();
+              default:
+                  return null;
+          }
+      }
+  } 
+```
+
+```java
+  package DesignPattern.gof_abstractFactory.sample003;
+
+  public class Starport implements BuilingConstructor {
+
+      public Unit createUnitOrNull(String unitType) {
+          switch (unitType){
+              case "wraith" :
+                  return new Wraith();
+              default:
+                  return null;
+          }
+      }
+  } 
+```
+
+```java
+  package DesignPattern.gof_abstractFactory.sample003;
+
+  public interface Unit {
+
+      public void attack();
+
+      public void destroyed();
+
+      public void defend();
+  }
+```
+
+```java
+  package DesignPattern.gof_abstractFactory.sample003;
+
+  public class FireBat implements Unit {
+
+      public void attack() {
+
+      }
+
+      public void destroyed() {
+
+      }
+
+      public void defend() {
+
+      }
+  } 
+```
+
+```java
+  package DesignPattern.gof_abstractFactory.sample003;
+
+  public class Marine implements Unit {
+
+      public void attack() {
+
+      }
+
+      public void destroyed() {
+
+      }
+
+      public void defend() {
+
+      }
+  }
+```
+
+```java
+  package DesignPattern.gof_abstractFactory.sample003;
+
+  public class SiegeTank implements Unit {
+
+      public void attack() {
+
+      }
+
+      public void destroyed() {
+
+      }
+
+      public void defend() {
+
+      }
+  }  
+```
+
+```java
+  package DesignPattern.gof_abstractFactory.sample003;
+
+  public class Wraith implements Unit {
+      public void attack() {
+
+      }
+
+      public void destroyed() {
+
+      }
+
+      public void defend() {
+
+      }
+  }  
+```
+
+```java
+  package DesignPattern.gof_abstractFactory.sample003;
+
+  public class SCV {
+
+      public static BuilingConstructor createBuildingOrNull(String buildType){
+          switch (buildType){
+              case "barrack" :
+                  return new Barrack();
+              case "factory" :
+                  return new Factory();
+              default:
+                  return null;
+          }
+      }
+  } 
+```
+
+```java
+  package DesignPattern.gof_abstractFactory.sample003;
+
+  public class Battle {
+      public static void main(String[] args) {
+
+          BuilingConstructor barrack1 = SCV.createBuildingOrNull("barrack");
+
+          Unit marine1 = barrack1.createUnitOrNull("marine");
+          Unit firebat1 = barrack1.createUnitOrNull("firebat");
+
+          marine1.attack();
+          firebat1.attack();
+
+          marine1.defend();
+
+          marine1.destroyed();
+          firebat1.destroyed();
+      }
+  }
+```
 
