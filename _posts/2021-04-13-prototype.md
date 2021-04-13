@@ -1,5 +1,5 @@
 ---
-title:  "Pattern - Factory Method"
+title:  "Pattern - Prototype"
 excerpt: "Gof Design Pattern"
 
 categories:
