@@ -111,3 +111,12 @@ last_modified_at: 2019-04-13T08:06:00-05:00
       }
     }   
   ```
+
+  ## Deep Thinking for Singleton 
+
+  - Double-Checked Locking(사용하지 말라)
+  - Memory Visibility ( 메모리 가시성 ) 와 Memory Barrier ( 메모리 장벽 )
+  - Singleton 죽이기
+  - static에 대하여 
+  - 동시성 제어에 대하여 
+  - 함수형 프로그래밍의 이점
