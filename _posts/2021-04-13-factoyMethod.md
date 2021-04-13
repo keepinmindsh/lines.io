@@ -494,7 +494,7 @@ package DesignPattern.gof_factoryMethod.sample002;
 public interface Config {
 
     public String getWavFileName();
-    
+
 }
 
 ```
@@ -508,3 +508,145 @@ public interface MFCCObject {
 }   
 
 ```
+
+# 코드 예제 - Static Factory Method 의 활용 
+
+***
+
+- 생성자 대신 정적 팩터리 메서드를 사용할 수 없는지 생각해 보라.
+
+  - 정적 팩터리 메서드를 사용하면, 불변 객체에 대해서 new 생성자가 아닌 캐시해서 사용이 가능하다.
+
+  ```java
+
+  public static final BigInteger ZERO = new BigInteger(new int[0], 0);
+
+  private final static int MAX_CONSTANT = 16;
+  private static BigInteger posConst[] = new BigInteger[MAX_CONSTANT+1];
+  private static BigInteger negConst[] = new BigInteger[MAX_CONSTANT+1];
+  
+  public static BigInteger valueOf(long val) {
+      if (val == 0)
+          return ZERO;
+      if (val > 0 && val <= MAX_CONSTANT)
+          return posConst[(int) val];
+      else if (val < 0 && val >= -MAX_CONSTANT)
+          return negConst[(int) -val];
+  
+      return new BigInteger(val);
+  }
+
+  ```
+
+  - 정적 팩터리 메서드를 사용하면, 가독성이 높아진다
+
+  ```java
+
+    public class WarpCharacter {
+        public static Airship InterceptorWarp(Map mapObj , int xPostion, int yPostion){
+            return new Interceptor();
+        }
+
+        public static Airship ScouterWarp(Map mapObj , int xPostion, int yPostion) {
+            return new Scouter();
+        }
+
+        public static Airship ArbiterWarp(Map mapObj , int xPostion, int yPostion){
+            return new Arbiter();
+        }
+    }     
+
+  ```
+
+  - 정적 팩터리 메서드를 사용하면, 다형성의 원칙에 따라 하위 자료형을 사용하게 만들 수 있다
+
+  ```java
+
+    package DesignPattern.gof_factoryMethod.staticfactorymethod;
+
+    public interface Airship {
+
+        public void Attack();
+
+        public void Retreat();
+
+        public void Destory();
+    }
+
+    package DesignPattern.gof_factoryMethod.staticfactorymethod;
+
+    public class Arbiter implements Airship {
+        public void Attack() {
+
+        }
+
+        public void Retreat() {
+
+        }
+
+        public void Destory() {
+
+        }
+    }
+
+    package DesignPattern.gof_factoryMethod.staticfactorymethod;
+
+    public class WarpCharacter {
+        public static Airship InterceptorWarp(Map mapObj , int xPostion, int yPostion){
+            return new Interceptor();
+        }
+
+        public static Airship ScouterWarp(Map mapObj , int xPostion, int yPostion) {
+            return new Scouter();
+        }
+
+        public static Airship ArbiterWarp(Map mapObj , int xPostion, int yPostion){
+            return new Arbiter();
+        }
+    } 
+
+  ```
+
+  - 정적 팩터리 메서드를 사용하면, 형인자 자료형 객체를 만들 때 편리
+
+  ```java
+
+
+    // 정적 팩토리 메서드: type inference를 이용한다
+    public static  HashMap newInstance() {
+    return new HashMap();
+    }              
+
+    // 1.7 이후 부터는 아래와 같이 쓸수 있게 되면서 형인자 자료형 객체에 의한 정적 팩토리는 힘을 잃었다. 
+    Map<String, List<String>> list = new HashMap<>();
+                        
+
+  ```
+
+  - Client 에서 실제로 함수를 호출할 때
+
+  ```java
+
+    package DesignPattern.gof_factoryMethod.staticfactorymethod;
+
+    public class Battle {
+
+        public static void main(String[] args) {
+
+            Map map = new Map();
+
+            Airship arbiter1 =  WarpCharacter.ArbiterWarp(map, 10, 60);
+
+            Airship interceptor1 = WarpCharacter.InterceptorWarp(map, 60, 800);
+
+            Airship scouter1 = WarpCharacter.ScouterWarp(map, 300, 1024);
+
+            arbiter1.Attack();
+
+            interceptor1.Attack();
+
+            scouter1.Attack();
+        }
+    }
+
+  ```
