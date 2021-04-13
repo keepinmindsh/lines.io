@@ -49,6 +49,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
 ![](https://keepinmindsh.github.io/lines/assets/img/factory_method_folder_structure.png){: .align-center}
 
+- 기본 설계 구조
+
 ![](https://keepinmindsh.github.io/lines/assets/img/factory_method.png){: .align-center}
 
 - 상세 설명
