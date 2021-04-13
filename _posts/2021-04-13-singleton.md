@@ -1,5 +1,5 @@
 ---
-title:  "Pattern - Prototype"
+title:  "Pattern - Singleton"
 excerpt: "Gof Design Pattern"
 
 categories:
