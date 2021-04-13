@@ -1,5 +1,5 @@
 ---
-title:  "Pattern - Composite"
+title:  "Pattern - Decorator"
 excerpt: "Gof Design Pattern"
 
 categories:
