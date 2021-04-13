@@ -1,5 +1,5 @@
 ---
-title:  "Pattern - Observer"
+title:  "Pattern - Visitor"
 excerpt: "Gof Design Pattern"
 
 categories:
