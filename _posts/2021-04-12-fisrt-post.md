@@ -1,20 +1,13 @@
 ---
-title:  "github.io 블로그 시작하기"
-excerpt: "GitHub Blog 서비스인 github.io 블로그 시작하기로 했다."
+title:  "Pattern - Abstract Factory"
+excerpt: "Gof Design Pattern"
 
 categories:
-  - Blog
+  - Pattern
 tags:
-  - Blog
+  - Pattern 
 last_modified_at: 2019-04-13T08:06:00-05:00
 ---
 
-GitHub Blog 서비스인 github.io 블로그 시작하기로 했다.
-GitHub Blog 서비스의 이름은 Pages이다.
+> 대부분의 사람들이 괴롭히지 않는 패턴을 기본 개념으로합니다. 그것들을 데이터 구조 나 알고리즘으로 생각하지 마십시오. 대신 코드를 메모를 보내거나 문자를 보내는 등의 메시지를 보내는 사람들로 생각하십시오. 각 개체는 '사람'입니다. '사람'과 메시지를 서로 보내는 데 사용하는 패턴을 구성하는 방식이 패턴입니다.
 
-Pages가 다른 블로그 플랫폼 보다 편한 것 같아서 마음에 든다.
-다른 사람들도 같이 많이 사용했으면 좋겠다는 생각이 든다.
-
-YFM에서 정의한 제목을 이중 괄호 구문으로 본문에 추가할 수 있다.
-이 글의 제목은 {{ page.title }}이고
-마지막으로 수정된 시간은 {{ page.last_modified_at }}이다.
