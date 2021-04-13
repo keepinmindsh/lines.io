@@ -56,4 +56,121 @@ last_modified_at: 2019-04-13T08:06:00-05:00
 3. 코드 예제 
 
 
+```java
+  package DesignPattern.gof_abstractFactory;
+  
+  public class Military {
+  
+      public static void main(String[] args) {
+  
+          TrainingFactory infantryFactory = TrainingProvider.getFactory("infantry");
+  
+          Soldier marine = infantryFactory.create("marine");
+  
+          marine.attack();
+          marine.getSoldier();
+  
+          Soldier firbat = infantryFactory.create("fire");
+  
+          firbat.getSoldier();
+          firbat.attack();
+      }
+  } 
+```
+
+```java
+ package DesignPattern.gof_abstractFactory;
+  
+  public interface Soldier {
+      String getSoldier();
+  
+      String attack();
+  }              
+```
+
+```java
+  package DesignPattern.gof_abstractFactory;
+  
+  public class Marine implements Soldier {
+  
+      public String getSoldier() {
+          return null;
+      }
+  
+      public String attack() {
+          return null;
+      }
+  }
+```
+
+```java
+  package DesignPattern.gof_abstractFactory;
+  
+  public class Firebat implements Soldier {
+  
+      public String getSoldier() {
+          return null;
+      }
+  
+      public String attack() {
+          return null;
+      }
+  } 
+```
+
+```java
+  package DesignPattern.gof_abstractFactory;
+  
+  public interface TrainingFactory {
+  
+      /**
+        *
+        * @param soldierType
+        * @return
+        */
+      Soldier create(String soldierType);
+  } 
+```
+
+```java
+  package DesignPattern.gof_abstractFactory;
+  
+  public class infantryTraingCenter implements TrainingFactory {
+      // infantryTraingCenter는 TrainingFactory의 구현을 담당하면서, 추상 팩토리에서 객체를 생성하는 역할을 맞는다..
+      public Soldier create(String soldierType) {
+          switch (soldierType){
+              case "marine":
+                  return new Marine();
+              case "fire":
+                  return new Firebat();
+          }
+          // Null 을 쓰는 것은 좋지 않으나 패턴 설명을 위해 사용함.
+          return null;
+      }
+  } 
+```
+
+```java
+  package DesignPattern.gof_abstractFactory;
+  
+  public class TrainingProvider {
+  
+      /**
+        * @param soldierType
+        * @return
+        */
+      public static TrainingFactory getFactory(String soldierType){
+  
+          if("infantry".equalsIgnoreCase(soldierType)){
+              return new infantryTraingCenter();
+          }
+  
+          // Null 을 쓰는 것은 좋지 않으나 패턴 설명을 위해 사용함.
+          return null;
+      }
+  }
+```
+
+
+
 
