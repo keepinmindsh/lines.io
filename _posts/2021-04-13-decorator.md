@@ -27,12 +27,11 @@ last_modified_at: 2019-04-13T08:06:00-05:00
 
 - 이와 같은 상황에서 가장 쉬운 방법은 이미 존재하는 클래스를 상속 받고, 또 다른 클래스에서 기존에 사용하던 동일한 클래스를 상속 받아 테두리 속성을 추가하고 이 서브 클래스의 인스턴스에 테두리가 있도록 하는 방법이지만, 이는 테두리을 선택하는 것 자체가 정적입니다. 사용자는 구성요소에 대해서 언제 , 어떻게 테두리로 장식해야할 지 제어할 수 없습니다. 이와 같이 기존의 객체에 대한 기능의 확장이 일어날 때 해당 구성요소를 둘러싸는 것입니다. 이렇게 무엇인가를 감싸는 객체를 장식자라고 합니다.
 
-
-  - Decorater 의 바른 설계 
+- Decorater 의 옳지않은 설계 
 
 ![](https://keepinmindsh.github.io/lines/assets/img/decorator_badsample.png){: .align-center}
 
-  - Decorater 의 올바른 설계 
+- Decorater 의 올바른 설계 
 
 ![](https://keepinmindsh.github.io/lines/assets/img/decorator_sample01.png){: .align-center}
 
