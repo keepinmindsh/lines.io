@@ -34,5 +34,6 @@ last_modified_at: 2019-04-13T08:06:00-05:00
 - **템플릿 메서드(Template Method)** 객체의 연산에는 알고리즘의 뼈대 만을 정의하고 각 단계에서 수행할 구체적 처리는 서브 클래스 쪽으로 미루는 패턴입니다. 알고리즘의 구조 자체는 그대로 나둔 채 알고리즘 각 단계의 처리를 서브 클래스 에서 재정의 할 수 있게 합니다.
 - **방문자(Visitor)** 객체 구조를 이루는 원소에 대해 수행할 연산을 표현하는 패턴으로, 연산을 적용할 원소의 클래스를 변경하지 않고도 새로운 연산을 정의할 수 있게 합니다.
 
+***
 
 ![](https://keepinmindsh.github.io/lines/assets/img/designpatterrelationship.jpeg){: .align-center}
