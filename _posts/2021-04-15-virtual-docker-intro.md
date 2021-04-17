@@ -34,6 +34,8 @@ Docker가 현재는 컨테이너를 대표하는 기술이지만, 사실 그 이
 
 ##### 컨테이너 연대기  
 
+***
+
 1979년 - Unix V7 <https://en.wikipedia.org/wiki/Version_7_Unix>
 
   chroot 시스템 콜이 처음으로 소개되었다. chroot은 root의 폴더 경로를 변경하고, children이 새 지점에 설정되어 운영된다. 해당 장점은 프로세스 고립(독립)을 위한 시작이었다. 
