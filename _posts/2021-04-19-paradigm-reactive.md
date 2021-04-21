@@ -76,4 +76,22 @@ func add(numberOnt: Int, numberTwo: Int) -> Int {
 
 ```
 
- 결국 Functional Programming이라는 것은, 결과에 집중하는 실용적인 함수를 정의하고 활용하되, 이러한 함수안에 숨겨진 input과 output이 최대한 없을 수 있도록 선언하는 프로그래밍 패러다임입니다.
+ 결국 Functional Programming이라는 것은, 결과에 집중하는 실용적인 함수를 정의하고 활용하되, 이러한 함수안에 숨겨진 input과 output이 최대한 없을 수 있도록 선언하는 프로그래밍 패러다임입니다.  
+
+# Reactive Streams 
+
+***
+
+- Reactive Stream : <https://www.reactive-streams.org/>  
+- Reactive Menifesto : <https://www.reactivemanifesto.org>  
+
+ 우리가 앞으로 Reactive Programming을 다루기 위해 사용할 Project Reactor 에 대해서 이해하기 전에 반드시 알아야할 내용이 있다.
+그것은 현재 Rective Programming을 지원하고 있는 Reactor, RxJava, RxSwift, RxJS, ... 등등의 근간이 되는 *Reactive Stream* 이라는 것이다. 
+
+Reactive Stream은 위의 링크(Reactive Stream 의 링크)에 영어로 설명되어 있는 것을 간단하게 정의해보면, 
+
+ **비동기적인 stream 프로세싱을 논-블록킹 방식의 배압(Back Pressure)를 이용해서 표준을 제공한다.**
+
+  - 위의 굵은 글씨의 내용이 Reactive Stream에서 가장 중요한 내용이며 이를 구현하기 위한 기본적인 개념을 하나씩 알아가보고자 한다. 
+
+Reactive Stream의 GitHub : <https://github.com/reactive-streams/reactive-streams-jvm/tree/v1.0.3>
