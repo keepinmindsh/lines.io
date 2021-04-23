@@ -94,4 +94,112 @@ Reactive Stream은 위의 링크(Reactive Stream 의 링크)에 영어로 설명
 
   - 위의 굵은 글씨의 내용이 Reactive Stream에서 가장 중요한 내용이며 이를 구현하기 위한 기본적인 개념을 하나씩 알아가보고자 한다. 
 
-Reactive Stream의 GitHub : <https://github.com/reactive-streams/reactive-streams-jvm/tree/v1.0.3>\\
+Reactive Stream의 GitHub : <https://github.com/reactive-streams/reactive-streams-jvm/tree/v1.0.3>
+
+#### Reactive Stream 의 수학적 개념 
+
+ - 가져오다 ( Pull )
+
+```java
+
+// List Type 은 Iterable 의 sub type 이다.
+List<Integer> list = Arrays.asList(1, 2, 3, 4, 5);
+
+// 이것은 Iterable 이기 때문에 여기에서 List 를 사용할 수 있는 것임
+for (Integer i : list) { 
+    System.out.println(i);
+}
+
+// Iterable 로 받아도 문제가 없음
+Iterable<Integer> iter = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+// 이터레이터를 통해서 반복적으로 사용할 수 있게 하려면 1.5 이전에는 아래와 같이 사용해야 했다. 
+for (Iterator<Integer> it = iter.iterator(); it.hasNext(); ) {
+    System.out.println(((Iterator) it).next());
+}
+
+// Lamda 의 관심은 함수 하나
+// 1부터 10까지를 계속해서 호출해서 쓸 수 있음
+Iterable<Integer> iter1 = () ->
+  new Iterator<Integer>() {  
+
+      int i = 0;
+      final static int MAX = 10;
+
+      @Override
+      public boolean hasNext() {
+          return i < MAX;
+      }
+
+      @Override
+      public Integer next() {
+          return ++i;
+      }
+  };
+
+// 1.5 이상은 아래와 같이 사용 가능하다. 
+for (Integer i : iter1) {
+    System.out.println(i);
+}
+
+```
+
+- 넣다 ( Push )
+
+```java
+
+public class Ob {
+
+  public static void main(String[] args) {        
+    // notifyObservers 호출이되면 update 가 호출이 된다.
+    Observer ob = new Observer() {
+        @Override
+        public void update(Observable o, Object arg) {
+            System.out.println(arg);
+
+            // Thread는 풀에 있는 스레드를 받게 처리되는 것은 ExecutorService 의 Thread를 메인스레드에서 분리해서 사용할 수 있다.
+            System.out.println(Thread.currentThread().getName() + " " + arg);
+        }
+    };
+
+    IntObservable observable = new IntObservable();
+
+    observable.addObserver(ob);
+
+    // Event Driven에서 주로 사용하는 방식인 감시자 패턴
+    // 메인 스레드에서 동작하게 하고 있음
+    observable.run();
+  }
+
+  static class IntObservable extends Observable implements Runnable {
+
+    @Override
+    public void run() {
+        for (int i = 0; i < 10; i++) {
+            setChanged();
+            // 아래의 두개는 Duality 라고 이야기 할 수 있다.
+            notifyObservers(i);    // push  method(DATA)
+            // int i = it.next()   // pull  DATA method(void)
+        }
+    }
+  }
+}
+
+```
+###### Iterable <------> Observable ( 쌍대성 ) - Duality : 비슷한 구조를 가진다.
+
+Iterable 은 Pulling 방식
+Observable 은 Push 방식
+Observable 와 Iterable 이 쌍대성을 가지는 구조
+처리하려는 기능은 같지만 처리 과정에 있어서 서로 상반되는 부분을 duality라고 하면 좀 더 이해가 쉬울 수 있다.
+{: .notice--info}
+
+
+#### Reactive Stream 의 API Component 
+
+<https://github.com/reactive-streams/reactive-streams-jvm/blob/v1.0.0/README.md#specification>
+
+- Publisher
+- Subscriber
+- Subscription
+- Processor
