@@ -85,16 +85,16 @@ func add(numberOnt: Int, numberTwo: Int) -> Int {
 - Reactive Stream : <https://www.reactive-streams.org/>  
 - Reactive Menifesto : <https://www.reactivemanifesto.org>  
 
- 우리가 앞으로 Reactive Programming을 다루기 위해 사용할 Project Reactor 에 대해서 이해하기 전에 반드시 알아야할 내용이 있다.
-그것은 현재 Rective Programming을 지원하고 있는 Reactor, RxJava, RxSwift, RxJS, ... 등등의 근간이 되는 *Reactive Stream* 이라는 것이다. 
+ 우리가 앞으로 Reactive Programming을 다루기 위해 사용할 Project Reactor 에 대해서 이해하기 전에 반드시 알아야할 내용이 있습니다.
+그것은 현재 Rective Programming을 지원하고 있는 Reactor, RxJava, RxSwift, RxJS, ... 등등의 근간이 되는 *Reactive Stream* 이라는 것입니다. 
 
 Reactive Stream은 위의 링크(Reactive Stream 의 링크)에 영어로 설명되어 있는 것을 간단하게 정의해보면, 
 
- **비동기적인 stream 프로세싱을 논-블록킹 방식의 배압(Back Pressure)를 이용해서 표준을 제공한다.**
+ **비동기적인 stream 프로세싱을 논-블록킹 방식의 배압(Back Pressure)를 이용해 표준을 제공합니다.**
 
-  - 위의 굵은 글씨의 내용이 Reactive Stream에서 가장 중요한 내용이며 이를 구현하기 위한 기본적인 개념을 하나씩 알아가보고자 한다. 
+  - 위의 굵은 글씨의 내용이 Reactive Stream에서 가장 중요한 내용이며 이를 구현하기 위한 기본적인 개념을 하나씩 알아보겠습니다. 
 
-Reactive Stream의 GitHub : <https://github.com/reactive-streams/reactive-streams-jvm/tree/v1.0.3>
+Reactive Stream에 대한 GitHub : <https://github.com/reactive-streams/reactive-streams-jvm/tree/v1.0.3>
 
 #### Reactive Stream 의 수학적 개념 
 
@@ -188,10 +188,11 @@ public class Ob {
 ```
 ###### Iterable <------> Observable ( 쌍대성 ) - Duality : 비슷한 구조를 가진다.
 
-Iterable 은 Pulling 방식
-Observable 은 Push 방식
-Observable 와 Iterable 이 쌍대성을 가지는 구조
-처리하려는 기능은 같지만 처리 과정에 있어서 서로 상반되는 부분을 duality라고 하면 좀 더 이해가 쉬울 수 있다.
+- Iterable 은 Pulling 방식
+- Observable 은 Push 방식
+
+Observable 와 Iterable 이 쌍대성을 가지는 구조  
+처리하려는 기능은 같지만 처리 과정에 있어서 서로 상반되는 부분을 duality라고 하면 좀 더 이해가 쉬울 수 있다.  
 {: .notice--info}
 
 
