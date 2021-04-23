@@ -82,6 +82,13 @@ func add(numberOnt: Int, numberTwo: Int) -> Int {
 
 ***
 
+  Volume이 정해져 있이 않는 실시간의 데이터 스트림을 처리하는 것은 비동기 시스템에서 필요합니다. 
+그리고 대부분의 이슈는 해당 스트팀의 최종 목적이가 과부하가 발생하지 않도록 과거의 데이터 자원을 조심스럽게 통제하기 위한 것입니다.
+협력하는 다수의 네트워크 호스트 또는 다중 CPU 코에 대해서 컴퓨팅 자원의 병렬 사용을 활성하기 위해서 비동기적으로 필요합니다.
+Reactive Stream의 주요 목표는 스트림 데이터의 변화를 비동기 영역에서 통제하는 것이다. 다른말로 하면 , 내부 압력은 해당 모델의 완벽한 부분인데, 
+연결을 맺기위한 스레드들 사이에서 중재하기 위한 큐들을 허락하기 위해서입니다. 
+Reactive Stream은 서로 다른 API Component 사이의 스트림 데이터를 중재하기 위한 것에 대해서만 오로지 고려하고 있습니다.
+
 - Reactive Stream : <https://www.reactive-streams.org/>  
 - Reactive Menifesto : <https://www.reactivemanifesto.org>  
 
@@ -195,12 +202,199 @@ Observable 와 Iterable 이 쌍대성을 가지는 구조
 처리하려는 기능은 같지만 처리 과정에 있어서 서로 상반되는 부분을 duality라고 하면 좀 더 이해가 쉬울 수 있다.  
 {: .notice--info}
 
+쌍대성(雙對性; duality)은 수학과 물리학에서 자주 등장하는 표현이다. 보통 어떤 수학적 구조의 쌍대(雙對; dual)란 그 구조를 ‘뒤집어서’ 구성한 것을 말하는데, 엄밀한 정의는 세부 분야와 대상에 따라 각각 다르다. 쌍대의 쌍대는 자기 자신이므로 어떤 대상과 그 쌍대는 서로 일종의 한 ‘켤레’를 이룬다고 할 수 있으며, 이를 쌍대관계(雙對關係)라고 한다.
+{: .notice--info}
+
 
 #### Reactive Stream 의 API Component 
 
 <https://github.com/reactive-streams/reactive-streams-jvm/blob/v1.0.0/README.md#specification>
 
+Reactive Stream에서 제공하는 기본 4가지 컴포넌트를 알아보고자합니다. 아래의 컴포넌트들은 초기에 Observer 패턴을 기반으로하여 Observer/Observable에서 부족한 부분을 보완한 컴포넌트입니다. 
+
 - Publisher
 - Subscriber
 - Subscription
 - Processor
+
+***
+
+- Subscriber
+  - Subscriber는 Observer 입니다.
+
+```java
+
+// 아래의 4개의 메소드는 반드시 implement 되어야 합니다.                                   
+public interface Subscriber {
+  public void onSubscribe(Subscription s);
+  public void onNext(T t);
+  public void onError(Throwable t);
+  public void onComplete();
+}   
+
+```
+
+![](https://keepinmindsh.github.io/lines/assets/img/subscriber_process.png){: .align-center}
+
+  - onSubscribe : 최초 호출되는 메소드, Subscriber를 사용할 때는 무조건 처음에 호출해야합니다.
+  - onNext : 기존의 Observer에서 update와 같은 역할을 합니다. 데이터를 받을 때 사용합니다.
+  - onComplete : 완료 되었을 때,
+  - onError : 에러가 발생했을 때,
+
+- Publisher 
+
+  - Publisher는 Observable 입니다. Subscriber는 Publisher의 subscribe를 통해 등록합니다. 
+
+```java
+
+public interface Publisher {
+  public void subscribe(Subscriber<? super T> s);
+}
+
+```
+
+- Subscription
+
+```java
+
+public interface Subscription {
+  public void request(long n);
+  public void cancel();
+}
+
+```
+
+request는 long 타입의 파라미터를 받고 있는데 Subscriber가 이 메소드를 통해 요청을 하게 됩니다. 만약 5개의 데이터를 필요하다고 가정했을 때, reqeust 에 5를 넣어서 호출하면 Subscription은 5개를 호출하게 됩니다. 즉, 10개의 데이터가 있을 때, reqeust가 5를 받아 처리한다면 5개 -> 5개 를 보내줄 수 있게 처리합니다.
+이는 publisher를 통해서 들어오는 데이터 스트림을 request를 이용해 subscriber에서 처리하는데 적절한 범위로 처리될 수 있게 제어를 할 수 있습니다. 이를 Reactive Stream에서 가장 중요한 Back-Pressure를 제어할 수 있는 방법입니다. 
+
+#### Reactive Basic Flow : Publisher - Subscriber - Subscription
+
+![](https://keepinmindsh.github.io/lines/assets/img/reactive_basic_flow.png){: .align-center}
+
+- Publisher에 Subscriber가 구독(등록)되면, Publisher가 실행(subscribe)될 때 Publisher 통해서 데이터(스트림) 또는 시퀀스를 Subscriber로 전달하게됩니다. 
+- 이때 Publisher는 Subscriber에 정의된 OnSubscribe()를 호출하고, Subscriber는 request(n)를 호출하여 몇개의 데이터를 보내달라고 Publisher에게 Subscription을 통해서 요청하게 됩니다. 
+- Subscrition을 통해 정의된 요청 갯수에 의해서 request 메소드 내에서 Subscriber의 onNext, onError, OnComplete를 제어할 수 있습니다.
+- Subscriber가 동작하던 도중에 장애/에러 발생으로 인하여 처리를 중단해야할 때 subscription 객체를 이용해서 cancel을 호출 하고 Flag를 관리한다면, 해당 Flow 전체를 중단할 수 있습니다. 
+
+![](https://keepinmindsh.github.io/lines/assets/img/reactive_interaction.png){: .align-center}
+
+
+##### 코드 샘플 
+
+```java
+
+package com.reactive.reactive;
+
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
+// Reactive Programming - Event Driven
+// 동시성을 구현하는 예제
+// GRPC
+public class PubSub {
+    public static void main(String[] args) throws InterruptedException {
+
+        //  Publisher  <- Observable
+        //  Subscriber  <- Observer
+
+        Iterable<Integer> itr = Arrays.asList(1,2,3,4,5);
+
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+
+        Publisher p = new Publisher() {
+            @Override
+            public void subscribe(Subscriber subscriber) {
+
+                Iterator<Integer> it = itr.iterator();
+
+                // 반드시 호출해야하는 것은 onSubscribe 이다
+                // Subscription 을 통해서 구독하겠다는 등록을 한다. - 반드시 등록되어야 한다. 
+                // Subscription 을 통해서 속도 제어 및 조절이 가능하다.
+                subscriber.onSubscribe(new Subscription() {
+                    @Override
+                    public void request(long n) {
+
+                        // 자바 언어의 일관성을 지키기 위해서 자유변수를 할당하는 데 사용 할 수 없음 : 쓰레드 한정 법칙 위배
+                        executorService.submit(() -> {
+                            int i = 0;
+
+                            try{
+                                while(i++ < n){
+                                    if(it.hasNext()){
+                                        subscriber.onNext(it.next());
+                                    }else{
+                                        subscriber.onComplete();
+                                        break;
+                                    }
+                                }
+                            }catch(RuntimeException e){
+                                subscriber.onError(e.fillInStackTrace());
+                            }
+                        });
+
+                    }
+
+                    @Override
+                    public void cancel() {
+
+                    }
+                });
+            }
+        };
+
+        // Subscriber 는 순차적으로 데이터가 전달될 것으로 가정한다.
+        Subscriber<Integer> s = new Subscriber<Integer>() {
+            Subscription subscription;
+
+            @Override
+            public void onSubscribe(Subscription subscription) {
+                System.out.println("onSubscribe");
+                this.subscription = subscription;
+                this.subscription.request(Long.MAX_VALUE);
+            }
+
+            int bufferSize = 2;
+
+            @Override
+            public void onNext(Integer integer) {
+                // Observer 패턴의 Update 와 동일함.
+                System.out.println( Thread.currentThread().getName() + "  OnNext " + integer);
+
+                // 다음 것을 호출 할 것인지를 여기에서 처리가 가능함.
+                // 버퍼 사이즈를 지정하고 그 사이즈가 모두 차면 진행할 수 있는 방식으로 처리 가능.
+                if(--bufferSize <= 0){
+                    bufferSize = 2; // 버퍼 사이즈에 따라서 처리할 수 있는 방식
+                    subscription.request(2);
+                }
+
+            }
+
+            @Override
+            public void onError(Throwable throwable) {
+                // Observer 패턴에는 에러가 났을 때가 없는데 이를 처리하는 부분
+                System.out.println( Thread.currentThread().getName() + "  OnError : " +  throwable.getMessage());
+            }
+
+            @Override
+            public void onComplete() {
+                // Observer 패턴에는 완료가되었다는 메세지가 없음
+                System.out.println("OnComplete");
+            }
+        };
+
+        p.subscribe(s);
+
+        executorService.awaitTermination(10, TimeUnit.HOURS);
+        executorService.shutdown();
+
+    }
+} 
+
+```
