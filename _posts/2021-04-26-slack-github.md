@@ -59,11 +59,11 @@ Slack에서 추가된 GitHub App을 통해서 메세지를 받기 위해서는 G
 
 github 연동 명령어 
 
-'''shell
+```shell
 
 /github signin 
 
-'''
+```
 
 ![](https://keepinmindsh.github.io/lines/assets/img/slack-github-007.png){: .align-center}
 
