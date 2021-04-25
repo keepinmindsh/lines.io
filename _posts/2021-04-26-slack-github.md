@@ -7,7 +7,7 @@ categories:
 tags:
   - slack 
 classes: wide
-last_modified_at: 2019-04-13T08:06:00-05:00
+last_modified_at: 2019-04-26T08:06:00-05:00
 ---
 
 # Slack과 Git을 연동하기 
@@ -19,12 +19,12 @@ Slack에 Git을 연동하여 issues, pulls, commits, releases 시 메세지 처�
 현재의 포스팅은 2021년 4월 26일 작성된 것으로 이후 Slack UI 및 프로세스는 변경될 수 있습니다. 
 {: .notice--info}
 
-####  사전 준비사항 
+##  사전 준비사항 
 
 - Slack App 설치 
 - 가이드 링크 : <https://github.com/integrations/slack>
 
-####  Slack에 Github App 추가 
+##  Slack에 Github App 추가 
 
 - Slack의 Apps로 들어가기
 
@@ -50,7 +50,7 @@ Slack에 Git을 연동하여 issues, pulls, commits, releases 시 메세지 처�
 
 ![](https://keepinmindsh.github.io/lines/assets/img/slack-github-006.png){: .align-center}
 
-####  Github App에 GitHub Account 연결 
+##  Github App에 GitHub Account 연결 
 
 Slack에서 추가된 GitHub App을 통해서 메세지를 받기 위해서는 GitHub Account는 연결해야 합니다. 
 
@@ -59,7 +59,7 @@ Slack에서 추가된 GitHub App을 통해서 메세지를 받기 위해서는 G
 
 github 연동 명령어 
 
-'''
+'''shell
 
 /github signin 
 
@@ -75,7 +75,7 @@ github 연동 명령어
 
 ![](https://keepinmindsh.github.io/lines/assets/img/slack-github-009.png){: .align-center}
 
-#### 원하는 채널에서 메세지 받기 
+## 원하는 채널에서 메세지 받기 
 
 - Github App에서 설정을 통해 "Add this app to a channel"을 선택합니다.
 
@@ -85,11 +85,11 @@ github 연동 명령어
 
 ![](https://keepinmindsh.github.io/lines/assets/img/slack-github-010.png){: .align-center}
 
-#### Channel에서 Github Repository 구독하기 
+## Channel에서 Github Repository 구독하기 
 
 우리가 원하는 channel에서 이제 Git Action Message를 받으려고 합니다. 
 
-```
+```shell
 
 /github subscribe owner/repo [feature]
 /github unsubscribe owner/repo [feature]
@@ -105,7 +105,7 @@ github 연동 명령어
 ![](https://keepinmindsh.github.io/lines/assets/img/slack-github-012.png){: .align-center}
 
 
-#### git을 통해서 push 후에 Slack 알림 확인
+## git을 통해서 push 후에 Slack 알림 확인
 
 
 - git commit/push 
