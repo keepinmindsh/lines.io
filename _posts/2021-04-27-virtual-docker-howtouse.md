@@ -34,5 +34,13 @@ $ docker search nodejs
 $ docker pull ubuntu:latest
 
 ```
-pull 명령으로 이미지 받기   
-docker pull {이미지 이름}:{태그}
+pull 명령으로 이미지 받기    
+docker pull {이미지 이름}:{태그}  
+
+#### Images 명령으로 이미지 목록 출력하기
+
+```shell
+
+$ docker images / docker image ls
+
+```
