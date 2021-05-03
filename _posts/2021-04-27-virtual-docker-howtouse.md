@@ -156,6 +156,14 @@ docker rmi {이미지 이름}:{태그}
 
 ```shell
 
-$ docker rm hello        
+$ docker rmi hello        
+
+```
+
+### 컨테이너 로그 보기 ( logs )
+
+```shell
+
+docker logs [OPTIONS] CONTAINER
 
 ```
