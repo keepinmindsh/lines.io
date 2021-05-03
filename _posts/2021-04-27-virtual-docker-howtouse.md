@@ -72,3 +72,90 @@ $ docker run -it -p 5005:5005 ubuntu
 $ docker run --name line-redis -d -p 6379:6379 redis
 
 ```
+
+#### PS 명령으로 컨테이너 목록 확인하기 
+
+ps 명령으로 컨테이너 목록 확인하기. docker ps 형식으로 -a 옵션을 사용하면 정지된 컨테이너까지 모두 출력하고, 옵션을 사용하지 않으면 실행되고 있는 컨테이너만 출력합니다
+
+```shell 
+
+$ docker ps -a / docker container ls
+
+```
+
+#### start 명령으로 컨테이너 시작하기 
+
+start 명령으로 컨테이너 시작하기, docker start를 통해 container를 기동 시키고, docker ps 로 해당 실행된 컨테이너 상태를 확인한다. 
+
+```shell
+
+$ docker start hello 
+
+```
+
+#### restart 명령으로 컨테이너 시작하기
+
+restart 명령으로 컨테이너 시작하기. docker restart를 통해 container를 기동 시키고, docker ps 로 해당 실행된 컨테이너 상태를 확인한다. 
+
+```shell
+
+$ docker restart hello    
+
+```
+
+#### attach 명령으로 컨테이너 시작하기
+
+attach 명령으로 컨테이너 시작하기   
+bin/bash를 통해 실행되기 때문에 명령을 자유롭게 입력할 수 있지만, DB나 서버 애플리케이션을 실행하면 입력은 할 수 없고, 출력만 보게된다.  
+exit 또는 ctrl + D 를 통해 종료 가능   
+
+```shell
+
+$ docker attach hello 
+
+```
+
+#### exec 명령으로 외부에서 컨테이너 안의 명령 실행하기
+
+exec 명령으로 외부에서 컨테이너 안의 명령 실행하기   
+docker exec {컨테이너 이름} {명령} {매개 변수}  
+컨테이너가 실행되고 있는 상태에서만 사용할 수 있으며 정지된 상태에서는 사용할 수 없습니다   
+
+```shell
+
+$ docker exec hello echo "Hello World"            
+
+```
+
+#### Stop 명령으로 컨테이너 정지하기
+
+Stop 명령으로 컨테이너 정지하기   
+docker stop {컨테이너 이름}   
+
+```shell
+
+$ docker stop hello   
+
+```
+
+#### rm 명령으로 컨테이너 삭제하기
+
+rm 명령으로 컨테이너 삭제하기   
+docker rm {컨테이너 이름}   
+
+```shell
+
+$ docker rm hello     
+
+```
+
+#### rmi 명령으로 이미지 삭제하기
+
+rmi 명령으로 이미지 삭제하기   
+docker rmi {이미지 이름}:{태그}    
+
+```shell
+
+$ docker rm hello        
+
+```
