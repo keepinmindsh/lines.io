@@ -1,5 +1,5 @@
 ---
-title:  "Docker 기본 "
+title:  "Docker 의 기본 명령어를 알아보자."
 excerpt: "Docker for Container"
 
 categories:
@@ -7,10 +7,10 @@ categories:
 tags:
   - Virtualization 
 classes: wide
-last_modified_at: 2019-04-13T08:06:00-05:00
+last_modified_at: 2019-05-04T08:06:00-05:00
 ---
 
-# Docker 기본
+# Docker 명령어
 
 ***
 
