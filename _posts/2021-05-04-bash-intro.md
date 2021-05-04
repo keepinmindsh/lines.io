@@ -51,13 +51,8 @@ set autoindent # 자동 들여쓰기 기능
 ![](https://keepinmindsh.github.io/lines/assets/img/vimrc.png){: .align-left}
 
 
-#### Bash 기본 문법 
+#### Bash 기본 문법   
 
 | 문법              | 설명                                                          |
 | --------         | ------------------------------------------------------------ |
-| >                 | 출력 리다이렉션, 명령 실행의 표준 출력을 파일로 저장힙니다. 유닉스 계열의 운영 체제는 장치도 파일로 처리하기 때문에 명령 실행 결과를 특정 장치로 보낼 수도 있습니다 
-```shell
-  $ echo "hello" > ./hello.txt
-  $ echo "hello" > /dev/null
-```
-            |
+| >                 | 출력 리다이렉션 |
