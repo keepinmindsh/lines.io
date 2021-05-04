@@ -31,6 +31,8 @@ echo 'Hello World!'
 
 - #! : 이 두개의 문자열은 사실 shebang이라고 하는 특별한 조합이다. shebang은 뒤따라오는 스트립트를 실행하기 위한 인터프리터의 이름을 시스템에 알려준다. 모든 쉘 스크립트의 첫 줄에는 shebang이 반드시 포함되어야 한다. 
 
+***
+
 #### VIM 설정하기 
 
 아래의 옵션들을 적용하면 Shell Script 작성시 도움이 된다. 
@@ -48,10 +50,12 @@ set autoindent # 자동 들여쓰기 기능
 
 - vim을 통해서 shell 파일을 열었을 때 ( 이미지 참고 )
 
-![](https://keepinmindsh.github.io/lines/assets/img/vimrc.png){: .align-left}
+![](https://keepinmindsh.github.io/lines/assets/img/vimrc.png){: .align-left}  
 
+***
 
 #### Bash 기본 문법   
+
 
 | 문법              | 설명                                                          |
 | --------         | ------------------------------------------------------------ |
