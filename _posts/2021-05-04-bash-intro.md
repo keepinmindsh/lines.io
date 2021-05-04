@@ -50,7 +50,7 @@ set autoindent # 자동 들여쓰기 기능
 
 - vim을 통해서 shell 파일을 열었을 때 ( 이미지 참고 )
 
-![](https://keepinmindsh.github.io/lines/assets/img/vimrc.png){: .align-left}  
+![](https://keepinmindsh.github.io/lines/assets/img/vimrc.png){: .align-center} 
 
 ***
 
