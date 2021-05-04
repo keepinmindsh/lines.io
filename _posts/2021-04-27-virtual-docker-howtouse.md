@@ -167,3 +167,24 @@ $ docker rmi hello
 docker logs [OPTIONS] CONTAINER
 
 ```
+
+# Docker File 명령어
+
+***
+
+### .dockerignore 
+
+ Docker file과 같은 디렉터리에 들어 있는 모든 파일을 컨텍스트 (Context)라고 합니다. 특히 이미지를 생성할 때 컨텍스트를 모두 Docker 데몬에 전송하므로 필요 없는 파일이 포함되지 않도록 주의 합니다. 컨텍스트에서 파일이나 디렉터리를 제외하고 싶을 때는 .dockerimage 파일을 사용하면 됩니다. 
+
+- .dockerignore 파일안에 아래와 같이 정의할 수 있습니다.  
+
+```shell
+
+ example/hello.txt 
+ example/*.cpp 
+ wo* 
+ *.cpp 
+ .git 
+ .svn  
+
+```
