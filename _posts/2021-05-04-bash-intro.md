@@ -10,8 +10,6 @@ classes: wide
 last_modified_at: 2019-05-04T22:06:00-05:00
 ---
 
-# Bash에 대해서 
-
 ***
 
 Bash ( Bourne-again shell ) - 본 셸을 대체히는 자유 소프트웨어로서 GNU 프로젝트를 위해 브라이언 폭스가 작성한 유닉스 셸이다. 
