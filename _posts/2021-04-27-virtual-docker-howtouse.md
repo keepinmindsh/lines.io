@@ -188,3 +188,47 @@ docker logs [OPTIONS] CONTAINER
  .svn  
 
 ```
+
+### FROM
+
+```shell
+
+FROM &lt;image>:&lt;tag>
+FROM ubuntu:16.04
+
+```
+
+베이스 이미지를 지정합니다. 반드시 지정해야 하며 어떤 이미지도 베이스 이미지가 될 수 있습니다. tag는 될 수 있으면 latest(기본값)보다 구체적인 버(16.04등)을 지정하는 것이 좋습니다. 이미 만들어진 다양한 베이스 이미지는 Docker hub에서 확인할 수 있습니다.
+
+FROM은 어떤 이미지를 기반으로 이미지를 생성할지 설정합니다. Dockerfile로 이미지를 생성할 때는 항상 기존에 있는 이미지를 기반으로 생성하기 때문에 FROM은 반드시 설정해야합니다.  
+
+FROM <이미지>:<태그> 
+앞에서 설명한 것 처럼 FROM 은 항상 설정해야 하고 맨 처음에 와야 합니다. 
+
+
+### MAINTAINER
+
+```shell
+
+MAINTAINER <name>
+MAINTAINER subicura@subicura.com
+
+```
+
+Dockerfile을 관리하는 사람의 이름 또는 이메일 정보를 적습니다. 빌드에 딱히 영향을 주지는 않습니다. 
+MAINTAINER <작성자 정보> 형식으로 생략할 수 있습니다. 
+
+### RUN
+
+RUN 은 FROM 에서 설정한 이미지 위에서 스크립트 혹은 명령을 실행합니다. 여기서 RUN 으로 실행한 결과가 새 이미지로 생성되고, 실행 내역은 이미지의 히스토리에 기록됩니다. 
+
+```shell
+
+RUN <command>
+RUN ["executable", "param1", "param2"]
+RUN bundle install
+
+```
+
+가장 많이 사용하는 구문입니다. 명령어를 그대로 실행합니다. 내부적으로 /bin/sh -c 뒤에 명령어를 실행하는 방식입니다.
+
