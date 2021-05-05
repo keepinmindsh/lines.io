@@ -1,6 +1,6 @@
 ---
 title:  "Bash에 대해서"
-excerpt: "Docker for Container"
+excerpt: "Bash"
 
 categories:
   - Linux

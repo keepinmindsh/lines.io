@@ -232,3 +232,61 @@ RUN bundle install
 
 가장 많이 사용하는 구문입니다. 명령어를 그대로 실행합니다. 내부적으로 /bin/sh -c 뒤에 명령어를 실행하는 방식입니다.
 
+```shell
+
+# bin/sh 로 명령 실행하기 
+> Dockerfile 
+RUN apt-get install -y nginx 
+RUN echo "Hello Docker " > /tmp/hello 
+RUN curl -sSL https://golang.org/dl/go1.3.1.src.tar.gz | tar -v -C /usr/local -xz 
+RUN git clon https://github.com/docker/docker.git 
+
+
+```
+
+ 위와 샘플과 같이 셸 스크립트 구문을 사용할 수 있습니다. FROM으로 설정한 이미지에 포함된 /bin/sh 실행 파일을 사용하게 되며, /bin/sh 실행 파일이 없으면 사용할 수 없습니다.   
+
+ 셀 없이 바로 실행하기   
+
+ ```shell
+
+RUN ["apt-get", "install", "-y", "nginx"]
+RUN ["/usr/local/bin/hello", "--help"]
+
+ ```
+
+RUN [ "<실행파일>", "<매개변수1>", "<매개변수2>" ] 형식이다.    
+FROM 으로 설정한 이미지의 bin/bash 실행 파일을 사용하지 않는 방식이다.   
+
+### CMD
+
+```shell
+
+CMD ["executable","param1","param2"]
+CMD command param1 param2
+CMD bundle exec ruby app.rb
+
+```
+
+도커 컨테이너가 실행되었을 때 실행되는 명령어를 정의합니다. 빌드할 때는 실행되지 않으며 여러 개의 CMD가 존재할 경우 가장 마지막 CMD만 실행됩니다. 
+한꺼번에 여러 개의 프로그램을 실행하고 싶은 경우에는 run.sh파일을 작성하여 데몬으로 실행하거나 supervisord나 forego와 같은 여러 개의 프로그램을 실행하는 프로그램을 사용합니다.
+
+```shell
+
+CMD touch /home/hello/hello.txt 
+
+```
+
+CMD <명령> 형식이며 셸 스크립트 구분을 사용할 수 있습니다.   
+FROM 으로 설정한 이미지에 포함된 bin/sh 실행파일을 사용하게 되며 /bin/sh 실행 파일이 없으면 사용할 수 없습니다.   
+
+셸 없이 바로 실행하기 
+
+```shell
+
+CMD ["redis-server"]
+
+```
+
+
+셸 없이 실행할 때 매개 변수 설정하기 
