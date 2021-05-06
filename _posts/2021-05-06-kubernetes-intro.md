@@ -7,7 +7,7 @@ categories:
 tags:
   - Container Ochestration
 classes: wide
-last_modified_at: 2019-05-05T14:06:00-05:00
+last_modified_at: 2019-05-06T14:07:00-05:00
 ---
 
 Minikube를 이용한 쿠버네티스 맛보기 
