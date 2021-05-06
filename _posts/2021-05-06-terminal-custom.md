@@ -7,7 +7,8 @@ categories:
 tags:
   - Mac
 classes: wide
-last_modified_at: 2019-05-05T14:06:00-05:00
+last_modified_at: 2019-05-06T14:15:00-05:00
+layout: single
 ---
 
 맥북에서 가장 많이 사용하게 되는 Terminal을 사용하게 좋게 꾸미는 방법에 대해서 정리해봤다. 
