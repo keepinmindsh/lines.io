@@ -119,11 +119,13 @@ vi /.zshrc
 
 ```shell
 
+{% \raw %}
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
     prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
   fi
 }
+{% \endraw %}
 
 ```
 ### New Line 적용하기 
@@ -139,7 +141,7 @@ vi ~/.oh-my-zsh/themes/agnoster.zsh-theme
 - 파일내에서 build_promt()를 찾고 그위에 함수 및 라인 추가 
 
 ```shell
-
+{% \raw %}
 prompt_newline() {
   if [[ -n $CURRENT_BG ]]; then
     echo -n "%{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR
@@ -164,6 +166,7 @@ build_prompt() {
   prompt_newline # 반드시 추가 필요 ! 순서도 반드시 지켜야함! 
   prompt_end
 }
+{% \endraw %}
 
 ```
 
