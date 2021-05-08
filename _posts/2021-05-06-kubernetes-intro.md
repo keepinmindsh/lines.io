@@ -3,9 +3,9 @@ title:  "Kubernetes Intro"
 excerpt: "Service Ochestration"
 
 categories:
-  - ContainerOchestration
+  - Container Ochestration
 tags:
-  - ContainerOchestration
+  - Container Ochestration
 classes: wide
 last_modified_at: 2019-05-06T14:07:00-05:00
 layout: single
