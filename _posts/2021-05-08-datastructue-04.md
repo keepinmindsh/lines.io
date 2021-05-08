@@ -39,6 +39,8 @@ layout: single
 
 ```c
 
+{% raw %}
+
 10x^5 + 0 * x^4 + 0 * x^3 + 0 * x^2 + 6 * x + 3 
 
 
@@ -51,11 +53,15 @@ typedef struct {
 
 polynomial a = { 5, { 10, 0 , 0, 0, 6 , 3}}
 
+{% endraw %}
+
 ```
 
 - 두번째 방법
 
 ```c
+
+{% raw %}
 
 #define MAX_TERMS 101
 
@@ -67,11 +73,15 @@ int avail;
 
 terms[MAX_TERMS] = {{ 8,3 }, { 7,1 } , { 1, 0 } , { 10, 3 } , { 3 , 2 } , { 1 , 0 } }
 
+{% endraw %}
+
 ```
 
 - 희소 행렬 
 
 ```c
+
+{% raw %}
 
 // 희소 행렬의 표현 방법 #1
 #define MAX_ROWS 100
@@ -89,6 +99,8 @@ struct matrix {
 int main(){
   struct matrix m[100] = { { .x = 1 , .y= 1 , .value = 'G' }, ... }
 }
+
+{% endraw %}
 
 ```
 
