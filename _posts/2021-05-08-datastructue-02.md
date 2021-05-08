@@ -1,6 +1,6 @@
 ---
-title:  "시간 복잡도에 대하여"
-excerpt: "시간복잡도란?"
+title:  "빅오 표기법에 대하여"
+excerpt: "빅오 표기법란?"
 
 categories:
   - Data Structure
