@@ -1,6 +1,6 @@
 ---
-title:  "Tree"
-excerpt: "Tree에 대한 구조, 작성방법에 대해서 알아보기"
+title:  "트리"
+excerpt: "트리에 대한 구조, 작성방법에 대해서 알아보기"
 
 categories:
   - Data Structure
