@@ -1,6 +1,6 @@
 ---
-title:  "탐색"
-excerpt: "탐색에 대한 구조, 작성방법에 대해서 알아보기"
+title:  "해싱"
+excerpt: "해싱에 대한 구조, 작성방법에 대해서 알아보기"
 
 categories:
   - Data Structure
