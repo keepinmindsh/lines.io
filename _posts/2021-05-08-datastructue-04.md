@@ -8,7 +8,6 @@ tags:
   - Data Structure
 classes: wide
 last_modified_at: 2019-05-08T14:15:00-05:00
-layout: single
 ---
 
 > 힘든 날도 있겠지, 좋은 날도 있을 거고, 오늘은 어떤 날인가? 

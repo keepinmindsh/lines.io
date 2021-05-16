@@ -8,7 +8,6 @@ tags:
   - Data Structure
 classes: wide
 last_modified_at: 2019-05-10T21:27:00-05:00
-layout: single
 ---
 
 > 그냥 웃으면 그렇게 화날 일도 별로 없다. 

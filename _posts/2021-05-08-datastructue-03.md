@@ -8,7 +8,6 @@ tags:
   - Data Structure
 classes: wide
 last_modified_at: 2019-05-08T14:15:00-05:00
-layout: single
 ---
 
 > 삶이라는 것이 쉽지가 않다. 늘 그렇다. 답을 찾지도 못하고 그냥 가만히 있는 수 밖에

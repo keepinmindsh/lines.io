@@ -8,7 +8,6 @@ tags:
   - Data Structure
 classes: wide
 last_modified_at: 2019-05-15T09:00:00-05:00
-layout: single
 ---
 
 > 바라는 것이 있다면 절대 잊지 말 것.

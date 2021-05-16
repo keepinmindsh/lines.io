@@ -8,7 +8,6 @@ tags:
   - Data Structure
 classes: wide
 last_modified_at: 2019-05-09T14:32:00-05:00
-layout: single
 ---
 
 > 삶을 행복하게 산다는 것은    

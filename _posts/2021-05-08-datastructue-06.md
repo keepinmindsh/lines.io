@@ -8,7 +8,6 @@ tags:
   - Data Structure
 classes: wide
 last_modified_at: 2019-05-08T14:15:00-05:00
-layout: single
 ---
 
 > 훌륭한 개발자가 되는 방법,   

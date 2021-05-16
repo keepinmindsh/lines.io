@@ -8,7 +8,6 @@ tags:
   - Data Structure
 classes: wide
 last_modified_at: 2019-05-13T22:50:00-05:00
-layout: single
 ---
 
 > 원래 대부분의 사람들이 속마음을 숨기고 산다.  

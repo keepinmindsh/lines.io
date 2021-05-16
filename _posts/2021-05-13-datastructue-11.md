@@ -8,7 +8,6 @@ tags:
   - Data Structure
 classes: wide
 last_modified_at: 2019-05-14T22:50:00-05:00
-layout: single
 ---
 
 > 좋은 것만 보고, 좋은 사람만 만나기도 짧은 인생,  

@@ -8,7 +8,6 @@ tags:
   - Data Structure
 classes: wide
 last_modified_at: 2019-05-11T22:50:00-05:00
-layout: single
 ---
 
 > 인생은 늘 불공평하다. 누구에게나 힘들고, 아프다.  

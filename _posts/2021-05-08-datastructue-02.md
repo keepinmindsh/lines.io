@@ -8,7 +8,6 @@ tags:
   - Data Structure
 classes: wide
 last_modified_at: 2019-05-08T14:15:00-05:00
-layout: single
 ---
 
 > 다들 사는 데 이유가 있겠지, 나도 살아야할 이유가 있겠지.
