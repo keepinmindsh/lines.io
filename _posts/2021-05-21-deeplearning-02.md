@@ -27,7 +27,7 @@ last_modified_at: 2019-05-16T16:00:00-05:00
 # 선형회귀 
 
 회귀 문제는 주어진 데이터 포인트 x에 해당하는 실제 값으로 주어지는 타겟 y를 예측하는 과제입니다. 회귀 문제는 현실에서 많이 보이는 문제입니다. 
-예를 들면, 주택 가격, 기존, 판매량 등과 같은 연속된 값을 예측하는 문제들을 들 수 있습니다. 이는 결과 값이 이미지 분류와 같이 과일의 종류를 예측하는 이산적인 구분문제와는 다릅니다. 
+예를 들면, 주택 가격, 기존, 판매량 등과 같은 연속된 값을 예측하는 문제들을 들 수 있습니다. 이는 결과 값이서 이미지 분류와 같이 과일의 종류를 예측하는 이산적인 구분문제와는 다릅니다. 
 
 ![](https://keepinmindsh.github.io/lines/assets/img/deeplearning_01.jpeg){: .align-center} 
  
@@ -73,3 +73,7 @@ last_modified_at: 2019-05-16T16:00:00-05:00
 ### Data Point 
 
 다차원 공간에 위치로 표현되는 벡터라는 의미에서 Data Point
+
+### 행렬곱 
+
+![](https://keepinmindsh.github.io/lines/assets/img/deeplearning_02.jpeg){: .align-center} 
