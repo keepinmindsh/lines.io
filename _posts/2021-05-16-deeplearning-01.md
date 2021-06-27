@@ -72,6 +72,76 @@ last_modified_at: 2019-05-16T16:00:00-05:00
 
 - 랜덤 : 노이즈(noise)라고도 불리는 이 데이터는 추세, 계절성 등으로 설명되지 않은 데이터를 의미한다. 이러한 데이터를 가지고 예측하게 된다면 예측의 오차가 커지기 때문에 전처리를 통해서 최대한 예측하는데 관여하지 않도록 하는 것이 중요하다.
 
+시계열 분석의 토대가 되는 방법론에 대해서 살펴보면 기본적으로 우리는 예측을 하기 위해서 A 변수로 ( 독립변수 ) 로 B 변수 ( 종속변수 )를 예측한다. 시계열 변수 만의 남다른 특징은 위의 과정에서 시계열 데이터가 추가되는 것이다.   
+시계열 데이터는 정상 시계역과 비정상 시계열로 나뉜다.  
+
+- 정상 시계열 
+
+ 뚜렷한 추세가 없고 진폭이 시간의 흐름에 따라 일정한 것을 의미한다. 
+
+- 비정상 시계열 
+
+ 시간대에 따라 데이터가 변하고 추세와 시간대를 갖는 것을 의미한다.   
+
+
+ 우리가 진행할 시게열 분석의 모형으로 쓰이는 대부분 알고리즘은 정상 시계열을 원한다. 그래서 데이터가 비정상 시계열일 경우, 정상 시계열로의 변환이 필요하다.  
+최종적으로 쓰이는 형태는 p,d,q이며, p,d,q는 우리가 설정해야하는 모수이다. 
+
+
+### 시계열 데이터 분석 
+
+###### 시계열 분석을 위한 수리적 모형 ARIMA
+
+- ARIMA
+
+ 자기회귀모형(AutoRegression)과 이동평균모형(MovingAverage)가 결합된(Intergrated) 모형이다. => AR + I + MA
+
+ ```python
+
+# 시계열 데이터 분석 1차 
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# ARIMA 모형이 인식할 수 있는 series 데이터 형태로 호출해야함. 
+data_ARIMA = pd.Series.from_csv('/Users/apple/Desktop/air_passengers.csv', sep=';', header=0, parse_dates=True)
+data_ARIMA.head(5)
+
+# Indexing 처리 
+data_ARIMA_cut = data_ARIMA.iloc[0:132, ]
+data_ARIMA_cut.tail()
+
+data_ARIMA_cut_float = data_ARIMA_cut[:].astype(np.float)
+data_ARIMA_cut_float.tail()
+
+data_ARIMA_cut_float.plot()
+plt.show()
+
+ ```
+
+```python
+
+import metaplotlib.pyplot as plt 
+from statsmodels.graphics.tsaplots import plot_acf, plot_pacf 
+
+
+```
+
+- Deprecated since version 0.21.0: Use pandas.read_csv() instead.
+
+https://pandas.pydata.org/pandas-docs/version/0.23/generated/pandas.Series.from_csv.html => Link 참고 
+
+- MA, Prophet, AR, A 
+
+https://www.kaggle.com/bogdanbaraban/ma-prophet-ar-arma-arima-lstm
+
+- 시계열 샘플 데이터 
+
+https://github.com/dacatay/time-series-analysis/tree/master/data
+
+
+
 ### 지도학습의 과정
 
 예제 입력을 많이 수집해서, 임의로 고릅니다. 각각에 대해서 ground truth 를 얻습니다. 입력과 해당하는 레이블을 합쳐서 학습데이터를 구성합니다. 학습 데이터를 지도학습 알고리즘에 입력합니다.
@@ -92,6 +162,9 @@ last_modified_at: 2019-05-16T16:00:00-05:00
 - 이 수술은 몇 시간이 걸릴가요? - 회귀
 - 이 사진에 개가 몇마리가 있나요? - 회귀
 
-그런데 만약 주어진 문제에 대한 질문을 "이것은 ... 인가요?"라고 쉽게 바꿀 수 있다면, 이것은 분류의 문제입니다. 
+그런데 만약 주어진 문제에 대한 질문을 "이것은 ... 인가요?"라고 쉽게 바꿀 수 있다면, 이것은 분류의 문제입니다.   
 
+
+
+*참조 링크* : https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=makeydrew&logNo=221400031097
 
