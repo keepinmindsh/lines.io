@@ -120,13 +120,51 @@ plt.show()
 
  ```
 
+- p, q에 대한 판단 
+
 ```python
 
 import metaplotlib.pyplot as plt 
 from statsmodels.graphics.tsaplots import plot_acf, plot_pacf 
 
+plot_acf(data_ARIMA_cut_float)
+plot_pacf(data_ARIMA_cut_float)
+pit.figure(figsize=(20,4))
+plt.show()
 
 ```
+
+- 차분횟수 d 구하기 
+
+```python
+
+diff_1 = data_ARIMA_cut_float.diff(periods=1).iloc[1:]
+diff_1.plot()
+plot_acf(diff_1)
+plot_pacf(diff_1)
+plt.show()
+
+```
+
+- 차분 횟수와 ARIMA의 모수를 이용한 적용 
+
+```python
+
+from statsmodels.tsa.arima_model import ARIMA
+from statsmodels.tas.arima_model import ARIMAResults
+
+model = ARIMA(data_ARIMA_cut_float, order=(1,1,0))
+model_fit = model.fit(trend='nc', full_output = True, disp = 1 )
+print(model_fit.summary())
+
+
+model_fit.plot_predit()
+
+fore = model_fit.forecast(steps = 1)
+print(fore)
+
+```
+
 
 - Deprecated since version 0.21.0: Use pandas.read_csv() instead.
 
