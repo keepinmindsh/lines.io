@@ -74,3 +74,32 @@ set autoindent # 자동 들여쓰기 기능
   $ cat < ./hello.txt
 
 ```
+
+###### 변수선언
+
+```shell
+
+local MESSAGE = "Hello World"
+
+echo $MESSAGE
+
+```
+###### 인자를 받아서 사용하기 
+
+```shell
+
+root@lines# ./deploy.sh test
+
+root@lines# echo $MESSAGE
+
+```
+
+```shell
+
+if [ "$1" = "test" ]; then 
+  MESSAGE = "Hello , "$1"!"
+else 
+  MESSAGE = "Hello World!"
+fi
+
+```
