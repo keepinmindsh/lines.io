@@ -1,0 +1,57 @@
+---
+title: "데이터 분석 1일차 - 선형회귀 분석"
+excerpt: "기본적인 선형 회귀 분석"
+
+categories:
+  - Deep Learning
+tags:
+  - Deep Learning
+classes: wide
+last_modified_at: 2021-07-29T07:31:00-05:00
+---
+
+> Higher Hope. 
+
+***
+
+# 데이터 분석 - 선형 회귀 분석 1일차 
+
+단순 선형 회귀는 반응 변수와 설명 변수 간에 선형 관계가 존재한다고 가정하고 초평면이라고 불리는 선형 평면을 이용해 관계를 모델링한다. 초평면은 자신을 포함하고 있는 차원보다 한 차원 낮은 부분 공간이다. 단순 선형회귀에서는 반응 함수를 위한 차원 하나와 설명 변수의 차원 하나를 더해 모두 2차워이 있다. 따라서 선형 회귀 초평면은 1차원이 되고 1차원 초평면은 선이다. 
+
+ 
+
+LinearRegression 클래스는 예측기이다. 예측기는 관찰 데이터로 부터 값을 예측한다. 
+
+ 
+
+scikit-learn의 모든 예측기에는 fit 와 predict가 구현되어 있다. 
+
+- fit은 모델의 매개변수를 학습하기 위해서 사용된다. 
+
+- predict는 학습된 매개변수를 사용해 주어진 설명 변수에 해당하는 반응 변수 값을 예측하기 위해 사용한다. 
+
+![](https://keepinmindsh.github.io/lines/assets/img/dataanalysys_20210812.png){: .align-center} 
+
+```python
+
+from sklearn.linear_model import LinearRegression
+import numpy as np
+
+# X는 훈련데이터의 특징이고, 여기서는 피자의 지름이다.
+# scikit-learn은 특징 벡터 이름을 X로 사용한다.
+# 대문자는 행렬을 의미하고 소문자는 벡터를 의미한다.
+X = np.array([[6], [8], [10], [14], [18]]).reshape(-1, 1)
+y = [ 7, 9, 13, 17.5, 18 ] # y 피자가격을 나타내는 벡터이다.
+
+model = LinearRegression() # 예측기 생성 - 선형회귀
+model.fit(X, y)            # 훈련 데이터에 모델 적합화
+
+# 임의의 변수를 입력하여 계산된 선형 그래프 상에서 피자의 가격을 예측
+test_pizza = np.array([[12]])
+predicted_price = model.predict(test_pizza)[0]
+print('A 12" pizza should code : $%.2f' % predicted_price)
+
+```
+ 
+
+단순 선형 회귀에서 모델을 최적 최적합화 하는 매개변수 값을 훈련 데이터로부터 학습하는 것을 최소 자승법 또는 선형 최소 자승법이라 한다. 
