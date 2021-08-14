@@ -84,7 +84,7 @@ print('A 12" pizza should code : $%.2f' % predicted_price)
 
 # 최소 자승법
 
- - 모델의 파라미터를 구하기 위한 대표적인 방법 중 하나로서 모델과 데이터와의 redidual^2의 합 또는 평균을 최소화 하도록 파라미터를 결정하는 방법이다. 
+모델의 파라미터를 구하기 위한 대표적인 방법 중 하나로서 모델과 데이터와의 redidual^2의 합 또는 평균을 최소화 하도록 파라미터를 결정하는 방법이다. 
 
 
 - 참조 : <https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=yunjh7024&logNo=220819925829> [제이의 블로그]
