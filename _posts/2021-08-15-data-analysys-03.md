@@ -67,4 +67,9 @@ print(np.cov(X.transpose(), y)[0][1])
 ![](https://keepinmindsh.github.io/lines/assets/img/dataanalysys_20210815.jpg){: .align-center} 
 
 
+베셀 보정(Bessel’s Correction)이라고 하는데 왜 이렇게 해야 되냐? 보통 교과서나 강의들에서는 자유도 (degree of freedom)이라는 개념으로 설명합니다. 샘플링 한 표본들은 평균적으로 모집단 기댓값보다는 표본 기댓값에 더 가깝게 형성되어 있기 때문에 표본 분산 값은 모집단 분산 값보다 낮게 측정됩니다. 그거를 약간 조정하기 위해 N-1을 이용하여 표본 분산 값을 톡 쳐서 올려준다는 논리입니다.
+{: .notice--info}
+
 - 참조 : <https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=yunjh7024&logNo=220819925829> [제이의 블로그]
+- 참조 : <https://learnshare.tistory.com/11> [Learn & Share :: Business and Data Note]
+- 참조 : <https://www.youtube.com/watch?v=LZe94nm1lZg>
