@@ -41,7 +41,6 @@ last_modified_at: 2021-07-29T07:31:00-05:00
 
 LinearRegression 클래스는 예측기이다. 예측기는 관찰 데이터로 부터 값을 예측한다. 
 
- 
 
 scikit-learn의 모든 예측기에는 fit 와 predict가 구현되어 있다. 
 
@@ -50,6 +49,16 @@ scikit-learn의 모든 예측기에는 fit 와 predict가 구현되어 있다.
 - predict는 학습된 매개변수를 사용해 주어진 설명 변수에 해당하는 반응 변수 값을 예측하기 위해 사용한다. 
 
 ![](https://keepinmindsh.github.io/lines/assets/img/dataanalysys_20210812.png){: .align-center} 
+
+Linear Regression의 fit 메소드는 단순 선형 회귀를 위한 다음과 같은 모델의 매개변수를 학습한다. 
+
+```
+
+y = α + βx
+
+```
+
+위의 공식에서 y는 반응 변수의 예측 값이다. 이 예제에서 예측 값은 피자 가격이 된다. x는 설명번수다. 절편항 α와 계수 β는 학습 알고리즘을 통해 학습하게 되는 모델의 매개변수이다. 
 
 ```python
 
@@ -71,7 +80,8 @@ predicted_price = model.predict(test_pizza)[0]
 print('A 12" pizza should code : $%.2f' % predicted_price)
 
 ```
- 
+
+*** 
 
 단순 선형 회귀에서 모델을 최적 최적합화 하는 매개변수 값을 훈련 데이터로부터 학습하는 것을 최소 자승법 또는 선형 최소 자승법이라 한다.  
 
