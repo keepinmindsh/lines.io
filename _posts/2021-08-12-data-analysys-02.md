@@ -89,8 +89,50 @@ print('A 12" pizza should code : $%.2f' % predicted_price)
 
 나중에 별도의 테스트 데이터를 상대로 모델을 평가하게 된다. 예측 값과 테스트 데이터의 관찰 값 사이의 차이를 예측 오차 또는 테스트 오차라 한다.  
 
-잔차의 합을 최소화하면 최적의 피자 가격 예측기를 만들 수 있다. 즉, 모델이 예측하는 반응 변수가 모든 훈련 예시의 관측 값이 가까원지면 모델이 적합화됐다고 할 수 있다. 
+잔차의 합을 최소화하면 최적의 피자 가격 예측기를 만들 수 있다. 즉, 모델이 예측하는 반응 변수가 모든 훈련 예시의 관측 값이 가까워지면 모델이 적합화됐다고 할 수 있다. 
 이러한 모델의 적합화 척도를 잔차 제곱의 합 비용 함수라고 한다. 형식을 갖춰 설명하자면 이 함수는 모델의 적합도를 평가하기 위해서 모든 훈련 예시의 잔차를 제곱한 값을 더한다.  
+
+
+reshape함수는 np.reshape(변경할 배열, 차원) 또는 배열.reshape(차원)으로 사용 할 수 있으며, 현재의 배열의 차원(1차원,2차원,3차원)을 변경하여 행렬을 반환하거나 하는 경우에 많이 이용되는 함수이다.
+{: .notice--info}
+
+- numpy : reshape
+
+```python
+
+import numpy as np
+a = [1,2,3,4,5,6]
+b = np.reshape(a,(2,3))
+c = np.reshape(a,(3,2))
+print(b)
+print('\n')
+print(c)
+
+
+```
+
+- result
+
+```shell
+
+D:\GIT\sample\sample\python\python_deeplearning\venv\Scripts\python.exe D:/GIT/sample/sample/python/python_deeplearning/dataanalysis_20210818.py
+[[1 2 3]
+ [4 5 6]]
+
+
+[[1 2]
+ [3 4]
+ [5 6]]
+
+Process finished with exit code 0
+
+```
+
+reshape를 활용하는 경우를 보다 보면 입력인수로 -1이 들어간 경우가 종종 있다.
+reshape()의 ‘-1’이 의미하는 바는, 변경된 배열의 ‘-1’ 위치의 차원은 “원래 배열의 길이와 남은 차원으로 부터 추정”이 된다는 뜻이다.
+즉, 행(row)의 위치에 -1을 넣고 열의 값을 지정해주면 변환될 배열의 행의 수는 알아서 지정이 된다는 소리이다.
+{: .notice--info}
+
 
 # 최소 자승법
 
@@ -123,3 +165,4 @@ Residual 은 어떤 데이터가 추정된 모델로부터 얼마나 떨어진 �
 
 
 - 참조 : <https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=yunjh7024&logNo=220819925829> [제이의 블로그]
+- 참조 : <https://yganalyst.github.io/data_handling/memo_5/> 
