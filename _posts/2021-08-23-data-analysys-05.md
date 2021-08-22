@@ -113,6 +113,7 @@ print(covariance)
 
 
 ```
+
 α = y - βx 
 
 ```
