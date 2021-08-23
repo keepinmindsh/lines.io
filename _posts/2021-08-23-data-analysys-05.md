@@ -28,7 +28,7 @@ y의 값 → [ 7, 9, 13, 17.5, 18 ] : 피자의 가격
  
 
 ### x의 분산
-집합의 모든 수가 동일하면 분산은 0이다/ 분산이 작으면 숫자들이 평균 근처에 밀집해 있다는 뜻이고, 평균으로부터 멀리 떨어질 수록 분산은 커진다. 
+집합의 모든 수가 동일하면 분산은 0이다. 분산이 작으면 숫자들이 평균 근처에 밀집해 있다는 뜻이고, 평균으로부터 멀리 떨어질 수록 분산은 커진다. 
 
  
 
@@ -79,6 +79,84 @@ variance = (( X - x_bar) ** 2).sum() / (X.shape[0] -1)
 print(variance)
 
 ``` 
+
+- 산술 평균 : arithmetic mean ( numpy.mean() )
+
+numpy.mean(arr, axis = None)  
+
+  - axis = 1 일 경우, 컬럼을 따라서 평균값 계산 
+  - axis = 0 일 경우, 행을 따라서 평균값 계산 
+
+
+mean의 계산 방법  
+
+```python 
+
+# Python Program illustrating 
+# numpy.mean() method 
+import numpy as np
+    
+# 1D array 
+arr = [20, 2, 7, 1, 34]
+  
+print("arr : ", arr) 
+print("mean of arr : ", np.mean(arr))
+
+```
+
+출력 값   
+
+```
+
+arr :  [20, 2, 7, 1, 34]
+mean of arr :  12.8
+
+```
+
+axis의 활용  
+
+```python 
+
+# Python Program illustrating 
+# numpy.mean() method   
+import numpy as np
+    
+  
+# 2D array 
+arr = [[14, 17, 12, 33, 44],  
+       [15, 6, 27, 8, 19], 
+       [23, 2, 54, 1, 4, ]] 
+    
+# mean of the flattened array 
+print("\nmean of arr, axis = None : ", np.mean(arr)) 
+    
+# mean along the axis = 0 
+print("\nmean of arr, axis = 0 : ", np.mean(arr, axis = 0)) 
+   
+# mean along the axis = 1 
+print("\nmean of arr, axis = 1 : ", np.mean(arr, axis = 1))
+  
+out_arr = np.arange(3)
+print("\nout_arr : ", out_arr) 
+print("mean of arr, axis = 1 : ", 
+      np.mean(arr, axis = 1, out = out_arr))
+
+```
+
+결과 값 
+
+```python 
+
+mean of arr, axis = None :  18.6
+
+mean of arr, axis = 0 :  [17.33333333  8.33333333 31.         14.         22.33333333]
+
+mean of arr, axis = 1 :  [24.  15.  16.8]
+
+out_arr :  [0 1 2]
+mean of arr, axis = 1 :  [24 15 16]
+
+```
 
 - x와 y의 공분산 : 22.65
 
