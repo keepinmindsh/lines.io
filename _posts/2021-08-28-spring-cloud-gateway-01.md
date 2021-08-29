@@ -128,3 +128,17 @@ RouteLocator gateway ( RouteLocatorBuilder rlb ) {
 }
 
 ```
+
+### Spring Cloud Gateway 시작하기 
+
+Spring Cloud Gateway는 Spring Boot 2.X, Spring WebFlux, 그리고 Project Reactor를 기반으로 구성되어 있다. 
+
+- 기본 용어 
+  - Route
+  - Predicate
+  - Filter 
+
+
+### 어떻게 동작하는가?
+
+![](https://keepinmindsh.github.io/lines/assets/img/spring_cloud_gateway_diagram.png){: .align-center} 
