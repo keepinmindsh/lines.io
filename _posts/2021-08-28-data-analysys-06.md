@@ -14,17 +14,13 @@ last_modified_at: 2021-07-29T07:31:00-05:00
 
 ***
 
-
-![](https://keepinmindsh.github.io/lines/assets/img/linearRegression_01.jpeg){: .align-center} 
-
-
-![](https://keepinmindsh.github.io/lines/assets/img/linearRegression_02.jpeg){: .align-center} 
-
+![](https://keepinmindsh.github.io/lines/assets/img/linearRegression_04.jpeg){: .align-center} 
 
 ![](https://keepinmindsh.github.io/lines/assets/img/linearRegression_03.jpeg){: .align-center} 
 
+![](https://keepinmindsh.github.io/lines/assets/img/linearRegression_02.jpeg){: .align-center} 
 
-![](https://keepinmindsh.github.io/lines/assets/img/linearRegression_04.jpeg){: .align-center} 
+![](https://keepinmindsh.github.io/lines/assets/img/linearRegression_01.jpeg){: .align-center} 
 
 
 > https://www.youtube.com/watch?v=ve6gtpZV83E
