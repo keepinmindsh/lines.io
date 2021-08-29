@@ -141,3 +141,7 @@ Spring Cloud Gateway는 Spring Boot 2.X, Spring WebFlux, 그리고 Project React
 ### 어떻게 동작하는가?
 
 ![](https://keepinmindsh.github.io/lines/assets/img/spring_cloud_gateway_diagram.png){: .align-center} 
+
+Client는 Spring Cloud Gateway로 요청을 전달하면, Gateway Handler가 만약 설정된 route 정보에 해당 하는 요청일 경우, Gateway Web Handler로 요청을 전달한다. 그리고 이 핸들러는 요청에 특화된 Filter Chain을 통해서 요청을 동작시킨다. 
+필터가 점선에 의해서 구분되는 것은 전/후의 로직에 대해서 Filter를 통해서 처리할 수 있다. 모든 "pre" 필터 로직은 실행될 것이다. 
+그리고 해당 우회 요청이 생기고, 그 우회 요청이 생깅 후에 "post" 필터의 로직이 동작할 것이다. 
