@@ -146,4 +146,21 @@ Client는 Spring Cloud Gateway로 요청을 전달하면, Gateway Handler가 만
 필터가 점선에 의해서 구분되는 것은 전/후의 로직에 대해서 Filter를 통해서 처리할 수 있다. 모든 "pre" 필터 로직은 실행될 것이다. 
 그리고 해당 우회 요청이 생기고, 그 우회 요청이 생깅 후에 "post" 필터의 로직이 동작할 것이다. 
 
+### 간단 예제
+
+- yaml 
+
+```
+
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: after_route
+        uri: https://example.org
+        predicates:
+        - Cookie=mycookie,mycookievalue
+
+```
+
 > https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#gateway-starter [2021-08-29]
