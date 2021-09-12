@@ -207,6 +207,8 @@ Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo can
 
 ### 너가 이해하지도 못한 부분에 대해서 남에게 시키지 마라. 
 
+본인이 하지 못한 것을 다른사람에게 시킨다는 것은
+
 ### 배움에 있어서는 위 아래가 있어서는 안된다. 
 
 ### Hello World를 넘어서
