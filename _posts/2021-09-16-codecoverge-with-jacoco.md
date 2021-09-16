@@ -28,6 +28,12 @@ last_modified_at: 2021-07-29T07:31:00-05:00
 라인을 기준으로 계산하여 Code Coverage 비율을 계산한다. 
 
 
+### 기본 구성 환경 
+
+- IntellJ
+- Gradle 
+- Junit
+
 ### 기본 샘플 
 
 개발자 작성 코드 
@@ -140,6 +146,30 @@ jacocoTestCoverageVerification{
 
 ```
 
+### Code Coverage 의 결과를 웹에서 확인하기 
+
+아래의 jacoco 설정을 통해서 build 폴더에 생성되는 HTML 자료에 의해서 결과 확인이 가능하다. 
+
+```gradle 
+
+jacoco {
+    toolVersion = "0.8.7"
+    reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
+}
+
+jacocoTestReport {
+    reports {
+        xml.required = false
+        csv.required = false
+        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+    }
+}
+
+```
+
+실제 build 되면 아래의 build 폴더 상의 구성을 확인할 수 있다. 
+
+![](https://keepinmindsh.github.io/lines/assets/img/codecoverage_with_jacoco_02.png){: .align-center} 
 
 ### 기동시 실제 동작 결과 
 
@@ -188,5 +218,6 @@ BUILD FAILED in 1s
 실제 코드 커버리지의 비율이 아래의 이미지와 같기 때문에 build는 테스트가 실패한다. 
 
 ![](https://keepinmindsh.github.io/lines/assets/img/codecoverage_with_jacoco.png){: .align-center} 
+
 
 코드 커버리지 90% 이상이 되지 않으면 해당 빌드는 성공할 수 없기 때문에 테스트 코드를 케이스에 맞게 잘 작성하거나, 코드 커버리지 범위를 조율할 필요가 있다. 해당 부분은 각 기업의 프로덕트의 구성에 따라 변경될 수 있는 부분이라고 생각된다. 
