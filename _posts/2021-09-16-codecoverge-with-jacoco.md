@@ -27,12 +27,13 @@ last_modified_at: 2021-07-29T07:31:00-05:00
 개발자가 자바 소스코드를 작성하고, 자바 컴파일러가 자바 소스 파일을 컴파일 한다. 이 때 나오는 파일은 자바 바이트 코드로 치환된 class 파일이 생성된다. 여기에서 자바 바이트코드로 작성된 .class을 기반으로 작성된 test가 동작할 때, 자바 바이트 코드 상에서 실제로 실행된 라인외에 실행되지 않은
 라인을 기준으로 계산하여 Code Coverage 비율을 계산한다. 
 
-
 ### 기본 구성 환경 
 
 - IntellJ
 - Gradle 
-- Junit
+- Java
+- JUnit
+- jacoco 0.8.7 <https://www.eclemma.org/jacoco/>
 
 ### 기본 샘플 
 
