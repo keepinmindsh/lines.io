@@ -18,6 +18,9 @@ last_modified_at: 2021-07-29T07:31:00-05:00
 
 **JaCoCo Java Code Coverage Library**  
 
+내가 생각하기에 Jacoco와 같은 Code Coverage 를 적용하는 이유는 명확하다. 우리가 작성하는 Test에 대한 Case가 모두 검출 되었는가를 개발자의 검증에 의해서 모두 체크하기에는 한계가 있기 마련이다. 따라서 이를 자동화하여 테스트 케이스를 검출할 수 있는 역할을 할 수 있다. 
+다만 Code Coverage가 모든 경우의 테스트 케이스를 검출하는 것을 불가능하지만 적어도 나의 Test Code가 모든 코드 라인을 통과하여 테스트가 수행이 가능한가에 대한 확신을 얻을 수는 있다.  
+
 - JaCoCo is a free code coverage library for Java, which has been created by the EclEmma team based on the lessons learned from using and integration existing libraries for many years.  
 
 - [번역] Jacoco는 자바를 위한 무료 코드 커버리지 라이브러리이다. 
