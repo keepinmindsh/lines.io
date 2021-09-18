@@ -137,6 +137,10 @@ Spring Cloud Gateway는 Spring Boot 2.X, Spring WebFlux, 그리고 Project React
   - Predicate
   - Filter 
 
+###### Spring Cloud Gateway 설정시 참고 사항 
+
+Spring Cloud Gateway는 Netty Runtime, Spring WebFlux 기반한에 동작한다. 기존의 전통적인 서블릿 컨테이너나 WAR로 빌드 되는 방식에서는 동작하지 않는다. 왜냐하면 Spring Cloud Gateway의 경우 Spring Boot 2.X, Spring WebFlux, 그리고 Project Reactor를 바탕으로 개발되었기 때문이다. 
+
 
 ### 어떻게 동작하는가?
 
@@ -164,3 +168,5 @@ spring:
 ```
 
 > https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#gateway-starter [2021-08-29]
+
+
