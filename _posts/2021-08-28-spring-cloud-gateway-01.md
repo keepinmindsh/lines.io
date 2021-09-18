@@ -171,7 +171,8 @@ spring:
 
 ### Predicates 
 
-Predicates의 경우, 다양한 옵션에 의해서 URL로의 접근을 제어할 수 있다. Predicates로 설정된 조건이 맞을 경우, uri에 설정된 값을 가져올 수 있다. 
+Predicates의 경우, 다양한 옵션에 의해서 URL로의 접근을 제어할 수 있다. Predicates로 설정된 조건이 맞을 경우, uri에 설정된 값을 가져올 수 있다.  
+Predicates에 설정된 조건에 부합할 경우 설정된 URL로 Match되며 값이 전달 된다. 
 
  - Cookies를 활용한 경우 
 
