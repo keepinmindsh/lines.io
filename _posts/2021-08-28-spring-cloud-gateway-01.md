@@ -169,4 +169,136 @@ spring:
 
 > https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#gateway-starter [2021-08-29]
 
+### Predicates 
 
+Predicates의 경우, 다양한 옵션에 의해서 URL로의 접근을 제어할 수 있다. Predicates로 설정된 조건이 맞을 경우, uri에 설정된 값을 가져올 수 있다. 
+
+ - Cookies를 활용한 경우 
+
+```
+
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: after_route
+        uri: https://example.org
+        predicates:
+        - name: Cookie
+          args:
+            name: mycookie
+            regexp: mycookievalue
+
+```
+
+ - After, Before, Between 에 의한 URL 허용 제한 
+
+```
+
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: after_route
+        uri: https://example.org
+        predicates:
+        - After=2017-01-20T17:42:47.789-07:00[America/Denver]
+
+```
+
+```
+
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: before_route
+        uri: https://example.org
+        predicates:
+        - Before=2017-01-20T17:42:47.789-07:00[America/Denver]
+
+```
+
+```
+
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: between_route
+        uri: https://example.org
+        predicates:
+        - Between=2017-01-20T17:42:47.789-07:00[America/Denver], 2017-01-21T17:42:47.789-07:00[America/Denver]
+
+```
+
+ - Header, Host, Method, etc 에 의한 허용 방식 
+
+```
+
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: header_route
+        uri: https://example.org
+        predicates:
+        - Header=X-Request-Id, \d+
+
+```
+
+```
+
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: host_route
+        uri: https://example.org
+        predicates:
+        - Host=**.somehost.org,**.anotherhost.org
+
+```
+
+```
+
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: method_route
+        uri: https://example.org
+        predicates:
+        - Method=GET,POST
+
+```
+
+ - Path 에 의한 허용 방식 
+
+```
+
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: path_route
+        uri: https://example.org
+        predicates:
+        - Path=/red/{segment},/blue/{segment}
+
+```
+
+ - Query 에 의한 허용 방식 
+
+```
+
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: query_route
+        uri: https://example.org
+        predicates:
+        - Query=green
+
+```
