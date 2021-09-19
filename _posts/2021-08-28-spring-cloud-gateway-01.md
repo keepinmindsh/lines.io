@@ -303,3 +303,24 @@ spring:
         - Query=green
 
 ```
+
+- Weight에 의한 분배 방식 
+
+설정한 그룹에 요청이 들어올 때 호출되는 비율을 지정한다. 아래는 8:2의 비율로 URL이 호출된다. 
+
+```
+
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: weight_high
+        uri: https://weighthigh.org
+        predicates:
+        - Weight=group1, 8
+      - id: weight_low
+        uri: https://weightlow.org
+        predicates:
+        - Weight=group1, 2
+
+```
