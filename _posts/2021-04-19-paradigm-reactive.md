@@ -1,6 +1,6 @@
 ---
-title:  "Reactive"
-excerpt: "Reactive"
+title:  "Reactive Programming"
+excerpt: "Reactive Streams와 WebFlux를 이용해서 Reactive Programming에 대해서 이해하기"
 
 categories:
   - paradigm
