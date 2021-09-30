@@ -1,7 +1,8 @@
 ---
 title:  "Pattern - Abstract Factory"
 excerpt: "Gof Design Pattern"
-
+sidebar:
+  nav: "docs"
 categories:
   - Pattern
 tags:

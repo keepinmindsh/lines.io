@@ -5,3 +5,9 @@ main:
     url: /categories/
   - title: "Tags"
     url: /tags/
+
+
+docs:
+  - title: Design Pattern
+
+
