@@ -25,9 +25,9 @@ masthead_title           : # overrides the website title displayed in the masthe
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               : "false" # false (default), "disqus", "discourse", "facebook", "staticman_v2", "staticman", "utterances", "custom"
+  provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "staticman_v2", "staticman", "utterances", "custom"
   disqus:
-    shortname            :
+    shortname            : "lines-blog"
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
@@ -90,9 +90,13 @@ analytics:
 # Site Author
 author:
   name             : "Jeong Sueng Hwa"
+  avatar           : "/assets/images/bio-photo.jpg" # 프로필 사진
+  bio              : "Lines For Code"
+  location         : "Seoul,Korea"
   email            : "keepinmindsh@gmail.com"
-  bio              : ""
-
+  uri              : # 웹사이트, 보통 지금 블로그 말고 링크해두고 싶은 사이트를 적는다.
+  # 이 아래 쇼셜 리스트에 해당되는 것에 아이디를 적는다
+  github : "keepinmindsh" # 주소 전체를 적는 것이 아닌 자신의 정보만 적는다.
 
 # Site Footer
 footer:
@@ -178,27 +182,19 @@ collections:
     output: true
     permalink: /:collection/:path/
 
-
-
+# Defaults
 defaults:
   # _posts
   - scope:
       path: ""
       type: posts
     values:
-      sidebar:
-        nav: "posts"
-      comments: true
-      toc: true
-      toc_sticky: true
-      toc_label: "Contents"
-  # _pages
-  - scope:
-      path: _pages
-      type: pages
-    values:
       layout: single
       author_profile: true
+      read_time: false # 해당 포스트를 읽은 시간이 표시되는데 기본값은 true이다.
+      comments: true # true
+      share: true # 포스트 공유 기능을 활성화 할 것인지 정한다. 기본값은 true이다.
+      related: true
 
 
 # Sass/SCSS
