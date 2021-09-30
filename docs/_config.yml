@@ -89,23 +89,9 @@ analytics:
 
 # Site Author
 author:
-  name             : *name # *name is a YAML reference pointing to the &anchor earlier
-  avatar           : "/assets/images/michael-rose.jpg"
-  bio              : "Just another *boring*, *tattooed*, *time traveling*, *designer*."
-  location         : "Buffalo, NY"
-  links:
-    - label: "Made Mistakes"
-      icon: "fas fa-fw fa-link"
-      url: "https://mademistakes.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/mmistakes"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/mmistakes"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/mmistakes"
+  name             : "Jeong Sueng Hwa"
+  email            : "keepinmindsh@gmail.com"
+  bio              : ""
 
 
 # Site Footer
@@ -193,67 +179,26 @@ collections:
     permalink: /:collection/:path/
 
 
-# Defaults
+
 defaults:
   # _posts
   - scope:
-      path: "_posts"
+      path: ""
       type: posts
+    values:
+      sidebar:
+        nav: "posts"
+      comments: true
+      toc: true
+      toc_sticky: true
+      toc_label: "Contents"
+  # _pages
+  - scope:
+      path: _pages
+      type: pages
     values:
       layout: single
       author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
-      sidebar:
-        nav: "docs"
-  # _docs
-  #- scope:
-  #    path: ""
-  #    type: docs
-  #  values:
-  #    layout: single
-  #    read_time: false
-  #    author_profile: true
-  #    share: false
-  #    comments: false
-  #    sidebar:
-  #      nav: "docs"
-  # _pages
-  #- scope:
-  #    path: "_pages"
-  #    type: pages
-  #  values:
-  #    layout: single
-  #    author_profile: true
-
-  # _recipes
-  #- scope:
-  #    path: ""
-  #    type: recipes
-  #  values:
-  #    layout: single
-  #    author_profile: true
-  #    share: true
-  #    comments: true
-  # _pets
-  #- scope:
-  #    path: ""
-  #    type: pets
-  #  values:
-  #    layout: single
-  #    author_profile: true
-  #    share: true
-  #    comment: true
-  # _portfolio
-  #  - scope:
-  #    path: ""
-  #    type: portfolio
-  #  values:
-  #    layout: single
-  #    author_profile: false
-  #    share: true
 
 
 # Sass/SCSS
