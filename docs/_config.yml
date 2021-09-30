@@ -218,6 +218,9 @@ defaults:
       path: ""
       type: docs
     values:
+      sidebar:
+        nav: "docs"
+    values:
       layout: single
       read_time: false
       author_profile: false
