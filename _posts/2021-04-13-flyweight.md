@@ -8,6 +8,8 @@ tags:
   - Pattern 
 classes: wide
 last_modified_at: 2019-04-13T08:06:00-05:00
+sidebar:
+  nav: "pattern"
 ---
 
 > 성공적인 직원 채용의 방법은 세상을 변화시키길 원하는 사람들을 찾아내는 것이다.
