@@ -6,7 +6,7 @@ main:
   - title: "Category"
     url: /categories/
 
-posts:
+pattern:
   - title: Design Pattern
     children:
       - title: "Abstract Factory Pattern"
