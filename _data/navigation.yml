@@ -7,24 +7,24 @@ main:
     url: /categories/
 
 pattern:
-  - title: Design Pattern
+  - title: Gof Design Pattern
     children:
-      - title: "Abstract Factory Pattern"
+      - title: "Abstract Factory"
         url: /pattern/abstract-factory/    
-      - title: "Adapter Pattern"
+      - title: "Adapter"
         url: /pattern/adapter/ 
-      - title: "Bridge Pattern"
+      - title: "Bridge"
         url: /pattern/bridge/
-      - title: "Builder Pattern"
+      - title: "Builder"
         url: /pattern/builder/ 
-      - title: "Chain of Reponsibility Pattern"
+      - title: "Chain of Reponsibility"
         url: /pattern/chainofresponsibity/
       - title: "Command"
         url: /pattern/command/        
-      - title: "composite"
+      - title: "Composite"
         url: /pattern/composite/
-      - title: "decorator"
+      - title: "Decorator"
         url: /pattern/decorator/  
-      - title: "factoryMethod"
+      - title: "FactoryMethod"
         url: /pattern/factoryMethod/
 
