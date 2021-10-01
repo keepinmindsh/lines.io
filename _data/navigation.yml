@@ -10,4 +10,4 @@ posts:
   - title: Design Pattern
     children:
       - title: "GOF Design Pattern"
-        url: /categories/#pattern
+        url: /pattern/abstract-factory/
