@@ -19,4 +19,12 @@ pattern:
         url: /pattern/builder/ 
       - title: "Chain of Reponsibility Pattern"
         url: /pattern/chainofresponsibity/
+      - title: "Command"
+        url: /pattern/command/        
+      - title: "composite"
+        url: /pattern/composite/
+      - title: "decorator"
+        url: /pattern/decorator/  
+      - title: "factoryMethod"
+        url: /pattern/factoryMethod/
 
