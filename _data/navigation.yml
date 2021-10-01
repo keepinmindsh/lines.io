@@ -9,5 +9,7 @@ main:
 posts:
   - title: Design Pattern
     children:
-      - title: "GOF Design Pattern"
+      - title: "Abstract Factory"
         url: /pattern/abstract-factory/
+      - title: "adapter"
+        url: /pattern/adapter/
