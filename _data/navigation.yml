@@ -10,13 +10,13 @@ posts:
   - title: Design Pattern
     children:
       - title: "Abstract Factory Pattern"
-        url: /pattern/abstract-factory/
-    children:        
+        url: /pattern/abstract-factory/    
       - title: "Adapter Pattern"
-        url: /pattern/adapter/
-    children:        
+        url: /pattern/adapter/ 
       - title: "Bridge Pattern"
         url: /pattern/bridge/
-    children:        
       - title: "Builder Pattern"
-        url: /pattern/builder/
+        url: /pattern/builder/ 
+      - title: "Chain of Reponsibility Pattern"
+        url: /pattern/chainofresponsibity/
+
