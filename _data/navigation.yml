@@ -27,4 +27,33 @@ pattern:
         url: /pattern/decorator/  
       - title: "FactoryMethod"
         url: /pattern/factoryMethod/
-
+      - title: "Flyweight"
+        url: /pattern/flyweight/        
+      - title: "Iterator"
+        url: /pattern/iterator/        
+      - title: "Mediator"
+        url: /pattern/meidator/
+      - title: "Memento"
+        url: /pattern/memento/
+      - title: "Observer"
+        url: /pattern/observer/                                                
+      - title: "Pacade"
+        url: /pattern/pacade/
+      - title: "Prototype"
+        url: /pattern/prototype/
+      - title: "Proxy"
+        url: /pattern/proxy/
+      - title: "Singleton"
+        url: /pattern/singleton/                                                          
+      - title: "State"
+        url: /pattern/state/
+      - title: "Strategy"
+        url: /pattern/strategy/
+      - title: "Template Method"
+        url: /pattern/templateMethod/
+      - title: "Visitor"
+        url: /pattern/visitor/        
+      - title: "Pattern Catalogs"
+        url: /pattern/pattern-catalogs/        
+      - title: "Pattern Final"
+        url: /pattern/pattern-final/                                

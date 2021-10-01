@@ -2,6 +2,8 @@
 title:  "Pattern - Prototype"
 excerpt: "Gof Design Pattern"
 
+sidebar:
+  nav: "pattern"
 categories:
   - Pattern
 tags:

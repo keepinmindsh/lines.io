@@ -2,6 +2,8 @@
 title:  "Pattern - Singleton"
 excerpt: "Gof Design Pattern"
 
+sidebar:
+    1nav: "pattern"
 categories:
   - Pattern
 tags:
