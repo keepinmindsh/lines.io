@@ -57,3 +57,9 @@ pattern:
         url: /pattern/pattern-catalogs/        
       - title: "Pattern Final"
         url: /pattern/pattern-final/                                
+
+architecture:
+  - title: Acrhitect
+    children:
+      - title: Architecture - 객체지향 설계 ( SOLID )
+        url: /architecture/achitecture-solid/

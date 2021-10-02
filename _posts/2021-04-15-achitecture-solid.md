@@ -2,6 +2,9 @@
 title:  "Architecture - 객체지향 설계 ( SOLID ) "
 excerpt: "Gof Design Pattern"
 
+
+sidebar:
+    nav: "architecture"
 categories:
   - Architecture
 tags:
