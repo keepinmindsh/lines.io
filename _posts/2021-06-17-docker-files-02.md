@@ -2,6 +2,8 @@
 title: "DockerFile"
 excerpt: "Docker File의 기본"
 
+sidebar:
+    nav: "virtualization"
 categories:
   - Docker
 tags:
