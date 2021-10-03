@@ -2,6 +2,8 @@
 title:  "Docker 의 기본 명령어를 알아보자."
 excerpt: "Docker for Container"
 
+sidebar:
+    nav: "virtualization"
 categories:
   - Virtualization
 tags:

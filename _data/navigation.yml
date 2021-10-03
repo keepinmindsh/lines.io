@@ -6,8 +6,90 @@ main:
   - title: "Category"
     url: /categories/
 
-posts:
-  - title: Design Pattern
+pattern:
+  - title: Gof Design Pattern
     children:
-      - title: "GOF Design Pattern"
-        url: /categories/#pattern
+      - title: "Abstract Factory"
+        url: /pattern/abstract-factory/    
+      - title: "Adapter"
+        url: /pattern/adapter/ 
+      - title: "Bridge"
+        url: /pattern/bridge/
+      - title: "Builder"
+        url: /pattern/builder/ 
+      - title: "Chain of Reponsibility"
+        url: /pattern/chainofresponsibity/
+      - title: "Command"
+        url: /pattern/command/        
+      - title: "Composite"
+        url: /pattern/composite/
+      - title: "Decorator"
+        url: /pattern/decorator/  
+      - title: "FactoryMethod"
+        url: /pattern/factoryMethod/
+      - title: "Flyweight"
+        url: /pattern/flyweight/        
+      - title: "Iterator"
+        url: /pattern/iterator/        
+      - title: "Mediator"
+        url: /pattern/meidator/
+      - title: "Memento"
+        url: /pattern/memento/
+      - title: "Observer"
+        url: /pattern/observer/                                                
+      - title: "Pacade"
+        url: /pattern/pacade/
+      - title: "Prototype"
+        url: /pattern/prototype/
+      - title: "Proxy"
+        url: /pattern/proxy/
+      - title: "Singleton"
+        url: /pattern/singleton/                                                          
+      - title: "State"
+        url: /pattern/state/
+      - title: "Strategy"
+        url: /pattern/strategy/
+      - title: "Template Method"
+        url: /pattern/templateMethod/
+      - title: "Visitor"
+        url: /pattern/visitor/        
+      - title: "Pattern Catalogs"
+        url: /pattern/pattern-catalogs/        
+      - title: "Pattern Final"
+        url: /pattern/pattern-final/                                
+
+architecture:
+  - title: Acrhitect
+    children:
+      - title: Architecture - 객체지향 설계 ( SOLID )
+        url: /architecture/achitecture-solid/
+
+virtualization:
+  - title: Virtualization
+    children:
+      - title: Docker 란?
+        url: /virtualization/virtual-docker-intro/
+      - title: Docker 의 기본기 1
+        url: /virtualization/virtual-docker-howtouse/
+      - title: Docker 의 기본기 2
+        url: /docker/docker-01/
+      - title: DockerFile
+        url: /docker/docker-files-02/
+
+docker:
+  - title: Docker
+    children:
+      - title: 
+        url: 
+
+docker:
+  - title: Docker
+    children:
+      - title: 
+        url: 
+
+docker:
+  - title: Docker
+    children:
+      - title: 
+        url: 

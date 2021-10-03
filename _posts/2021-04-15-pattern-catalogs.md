@@ -2,6 +2,8 @@
 title:  "Pattern - Catalogs "
 excerpt: "Gof Design Pattern"
 
+sidebar:
+    nav: "pattern"
 categories:
   - Pattern
 tags:

@@ -2,6 +2,8 @@
 title:  "Pattern - 패턴에서 무엇을 기대할 수 있는가?"
 excerpt: "Gof Design Pattern"
 
+sidebar:
+    nav: "pattern"
 categories:
   - Pattern
 tags:

@@ -2,6 +2,8 @@
 title:  "Docker 란?"
 excerpt: "Docker for Container"
 
+sidebar:
+    nav: "virtualization"
 categories:
   - Virtualization
 tags:
