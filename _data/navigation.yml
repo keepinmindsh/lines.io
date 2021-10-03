@@ -82,11 +82,11 @@ bigdata:
       - title: Hadoop 이란 
         url: /bigdata/hadoop-01/
 
-docker:
-  - title: Docker
+basic:
+  - title: Computer Basic
     children:
-      - title: 
-        url: 
+      - title: 컴퓨터 알고리즘 - 1차 
+        url: /basic/computer_algorithm_basic01/
 
 docker:
   - title: Docker
