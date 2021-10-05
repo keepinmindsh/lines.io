@@ -32,7 +32,7 @@ pattern:
       - title: "Iterator"
         url: /pattern/iterator/        
       - title: "Mediator"
-        url: /pattern/meidator/
+        url: /pattern/mediator/
       - title: "Memento"
         url: /pattern/memento/
       - title: "Observer"
