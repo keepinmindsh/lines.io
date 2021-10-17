@@ -42,3 +42,15 @@ R는 나머지(remainder)라고 부른다.
 
 
 > 출처: <https://eine.tistory.com/entry/수학-나머지Modulo-연산-1> [아인스트라세의 SW 블로그]
+
+### Joel On Software 
+
+##### 장인정신, 99%의 완성 상태에서 1%의 완성도를 위해서 들어가는 비싸지만 다른 기업과의 경쟁에서 경쟁우위를 점할 수 있는 핵심 요인 
+
+##### 검색, 검색에서의 진짜 문제는 검색 결과를 정렬하는 방법 
+
+> [Page Rank Algorithim]  <https://ko.wikipedia.org/wiki/%ED%8E%98%EC%9D%B4%EC%A7%80%EB%9E%AD%ED%81%AC>
+
+- Page Rank에 대한 논문을 확인할 수 있는 링크 ( 아래 링크 참조 )
+
+> 문서출처: 이명헌 경영스쿨 http://www.emh.co.kr/xhtml/google_pagerank_citation_ranking.html
