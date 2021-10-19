@@ -54,3 +54,26 @@ R는 나머지(remainder)라고 부른다.
 - Page Rank에 대한 논문을 확인할 수 있는 링크 ( 아래 링크 참조 )
 
 > 문서출처: 이명헌 경영스쿨 http://www.emh.co.kr/xhtml/google_pagerank_citation_ranking.html
+
+##### Anti-Aliasing 문자 
+
+- 컬러 디스플레이의 해상도가 낮을 때, 회색 그림자를 사용해서 해상도 '착각'을 불러 일으키는 편이 보기에 좋다는 생각해서 출발하였음. 
+
+> https://blog.naver.com/marasyl/222494098324
+
+##### 네트워크 투명성 
+
+- 유명한 예제 : RPC (원격 프로시져 호출)
+
+### UNC - Universal Naming Convention
+
+UNC[유엔씨]는 컴퓨터 내의 공유 파일이 저장되어 있는 장치를 명시하지 않고서도, 그 파일을 확인하기 위한 방법이다. 윈도우 운영체계, 노벨 네트웨어, 그리고 어쩌면 많은 다른 운영체계들에서도, 자체적인 명명 시스템 대신 UNC가 사용될 수 있다.
+
+### CopyFile 메소드 
+
+> https://docs.microsoft.com/ko-kr/dotnet/api/microsoft.visualbasic.fileio.filesystem.copyfile?view=net-5.0
+
+### FtpOpenFile
+
+> https://docs.microsoft.com/en-us/windows/win32/api/wininet/nf-wininet-ftpopenfilea
+> https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=tipsware&logNo=100200000637
