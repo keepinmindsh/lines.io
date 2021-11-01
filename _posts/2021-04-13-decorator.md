@@ -15,21 +15,21 @@ last_modified_at: 2019-04-13T08:06:00-05:00
 > 실패에 대해 걱정하지 마라. 한번만 제대로 하면 된다.  
 >  - 드류 휴스턴 ( 드롭박스 공동 창업자 )
 
-# 의도 
-
 ***
+
+# 의도 
 
 객체에 동적으로 새로운 책임을 추가할 수 있게 합니다. 기능을 추가하기 위해서 서브클래스를 생성하는 것보다 더욱 융통성있는 방법을 제공합니다.
 
-# 동기
-
 ***
+
+# 동기
 
 - 개별적인 객체에 새로운 책임을 추가할 필요가 있을 경우를 이야기 하는데, GUI 툴킷에서 모든 사용자 인터페이스 요소에는 필요 없지만, 어떤 사용자 인터페이스 요소에만 스크롤링과 같은 행동이나 테두리와 같은 속성을 추가할 수 있도록 해줄 필요가 있습니다.
 
 - 이와 같은 상황에서 가장 쉬운 방법은 이미 존재하는 클래스를 상속 받고, 또 다른 클래스에서 기존에 사용하던 동일한 클래스를 상속 받아 테두리 속성을 추가하고 이 서브 클래스의 인스턴스에 테두리가 있도록 하는 방법이지만, 이는 테두리을 선택하는 것 자체가 정적입니다. 사용자는 구성요소에 대해서 언제 , 어떻게 테두리로 장식해야할 지 제어할 수 없습니다. 이와 같이 기존의 객체에 대한 기능의 확장이 일어날 때 해당 구성요소를 둘러싸는 것입니다. 이렇게 무엇인가를 감싸는 객체를 장식자라고 합니다.
 
-- Decorater 의 옳지않은 설계 
+- Decorater 의 옳지 않은 설계 
 
 ![](https://keepinmindsh.github.io/lines/assets/img/decorator_badsample.png){: .align-center}
 
@@ -37,9 +37,9 @@ last_modified_at: 2019-04-13T08:06:00-05:00
 
 ![](https://keepinmindsh.github.io/lines/assets/img/decorator_sample01.png){: .align-center}
 
-# 활용성
-
 ***
+
+# 활용성
 
 ![](https://keepinmindsh.github.io/lines/assets/img/decorator.png){: .align-center}
 
@@ -51,29 +51,29 @@ last_modified_at: 2019-04-13T08:06:00-05:00
 
 - 장식자 패턴은 객체에 새로운 행동을 추가할 수 있는 가장 효과적인 방법입니다. 장식자를 사용하면 장식자를 객체와 연결하거나 분리하는 작업을 통해 새로운 책임을 추가하거나 삭제하는 일이 런타임에 가능해집니다.
 
-# 항목에 대한 설명 
-
 ***
 
-- Component
-*Visual Component*
+# 항목에 대한 설명 
+
+- Component  
+*Visual Component*  
 동적으로 추가할 서비스를 가질 가능성이 있는 객체들에 대한 인터페이스
 
-- ConcreteComponent
-*TextView*
+- ConcreteComponent  
+*TextView*  
 추가적인 서비스가 실제로 정의되어야 할 필요가 있는 객체
 
-- Decorator
-*Component*
+- Decorator  
+*Component*  
 Component 객체에 대한 참조자를 관리하면서 Component에 정의된 인터페이스를 만족하도록 인터페이스를 정의
 
 - ConcreteDecorator
 *BorderDecorator, ScrollDecorator*
 Component에 새롭게 추가할 서비스를 실제로 구현하는 서비스
 
-# 코드 예제
-
 ***
+
+# 코드 예제
 
 ```java
 
