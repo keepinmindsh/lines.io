@@ -459,9 +459,6 @@ fun main() {
 
 ```
 
-# Idioms 
-
-
 # Idioms
 
 **POJOs/POCOs**
