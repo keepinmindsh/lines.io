@@ -23,14 +23,15 @@ last_modified_at: 2021-10-22T17:31:00-21:55:00
 	- Pipe And Filter 패턴 
 	- BlackBoard 패턴 
 
-
 - 분산 시스템 
 	- Broker 패턴
 	- Microkernel 패턴 
 
+
 - 상호작용 시스템 
 	- Model View Controller 패턴 
 	- Presentation Abstraction Control 패턴
+
 
 - 적응 시스템 
 	- Reflection 패턴 
