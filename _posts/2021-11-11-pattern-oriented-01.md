@@ -33,7 +33,7 @@ last_modified_at: 2021-10-22T17:31:00-21:55:00
 
 - OSI 7 계층 모델
 
-![](https://keepinmindsh.github.io/lines/assets/img/OCI_7layers.jpg){: .align-center} 
+![](https://keepinmindsh.github.io/lines/assets/img/OCI_7layers.png){: .align-center} 
 
 - TCP/IP 인터넷 프로토콜 
 
