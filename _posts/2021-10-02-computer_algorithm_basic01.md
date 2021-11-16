@@ -95,9 +95,4 @@ last_modified_at: 2021-10-22T17:31:00-21:55:00
 그 알고리즘을 구성하는데 가장 메인이 되는 연산의 횟수를 이용하여 상대적인 비교 수행이 가능하다. 
 
 
-
-
-
-
-
 > <https://www.youtube.com/watch?v=R8JWtzfgeNM&list=PL9mhQYIlKEheVMo9pVitEm4dJG9i3Jrmt> [컴퓨터 알고리즘 이해 1강 - 알고리즘과 점근적 표기법 | T아카데미]
