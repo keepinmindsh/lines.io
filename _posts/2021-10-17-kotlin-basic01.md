@@ -14,7 +14,6 @@ last_modified_at: 2021-10-22T17:31:00-21:55:00
 
 ***
 
-
 - https://kotlinlang.org/docs/getting-started.html#create-your-powerful-application-with-kotlin
 
 ### Kotlin Basic 
