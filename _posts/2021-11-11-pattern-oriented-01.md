@@ -73,3 +73,4 @@ TCP는 TELNET이나 FTP와 같은 다양한 분산 어플리케이션에서 그�
 	- Mircokernel 패턴 
 
 ***
+
