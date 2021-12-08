@@ -386,3 +386,28 @@ function createImage(name){
 const image = createImage('photo.jpeg');
 
 ```
+
+팩토리는 더 많은 유연성을 제공합니다. 
+
+```javascript
+
+function createImage(name){
+  if(name.match(/\.jpeg$/)){
+    return new JpegImage(name);
+  }
+
+  if(name.match(/\.gif$/)){
+    return new JpegImage(name);
+  }
+
+  if(name.match(/\.png$/)){
+    return new JpegImage(name);
+  }
+
+  throw new Exception('Unsupported format');
+}
+
+```
+
+factory는 또한 생성된 객체의 생성자를 노출 시키지 않고 객체를 확장하거나 수정하지 못하도록 합니다.   
+- https://dzone.com/articles/surface-area-over-volume-ratio
