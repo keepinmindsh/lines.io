@@ -444,3 +444,9 @@ return person;
 }
 
 ```
+
+팩토리는 private 멤버를 생성하기 위한 기술 중 하나일 뿐입니다. 실제로 이것이 가능한 다른 접근 방법들은 다음과 같습니다. 
+- 생성자에서 private 변수 정의하기 
+- 규칙 사용하기, 예를 들어 속성의 이름 앞에 밑줄 "_" 또는 달러 기호 "$"를 붙입니다. 
+- ES2015 WeakMap 사용하기 ( https://fitzgeraldnick.com/2014/01/13/hiding-implementation-details-with-e6-weakmaps.html )
+{: .notice--info}
