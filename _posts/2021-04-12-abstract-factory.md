@@ -410,4 +410,37 @@ function createImage(name){
 ```
 
 factory는 또한 생성된 객체의 생성자를 노출 시키지 않고 객체를 확장하거나 수정하지 못하도록 합니다.   
+
 - https://dzone.com/articles/surface-area-over-volume-ratio
+
+
+### 캡슐화를 강제하는 매커니즘 
+
+캡슐화는 외부 코드가 내부 세부 정보에 대해서 직접 조작하지 못하게 하여 객체의 접근을 제어하는 기술을 말합니다. 객체와의 상호 작용은 공개된 인터페이스를 통해서만 발생하며 객체의 세부 구현에 대한 변경 사항과 
+외부 코드를 분리합니다. 이것을 정보 은닉이라고도 합니다. 캡슐화는 상속, 다형성 및 추상화와 함께 객체 지향 디자인의 기본 원칙이기도 합니다. 
+{: .notice--info}
+
+- 캡슐화를 적용하는 유일한 방법은 함수 범위와 클로저를 사용하는 것입니다. 
+
+```javascript
+
+function createPerson(name) {
+  const privateProperties = {};
+
+  const person = {
+    setName : name => {
+      if(!name) throw new Error('A person must have a name');
+      privateProperties.name = name;
+    },
+    getName : () => {
+      return privateProperties.name;
+    }
+  };
+
+
+person.setName(name);
+return person;
+
+}
+
+```

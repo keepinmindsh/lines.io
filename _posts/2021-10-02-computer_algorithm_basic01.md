@@ -125,5 +125,6 @@ T(n) 으로 표현하고 최고차항으로 고려
 - Master Method 
 
 
+
 > <https://www.youtube.com/watch?v=R8JWtzfgeNM&list=PL9mhQYIlKEheVMo9pVitEm4dJG9i3Jrmt> [컴퓨터 알고리즘 이해 1강 - 알고리즘과 점근적 표기법 | T아카데미]
 > <https://www.youtube.com/watch?v=8NtCxer9pKM&list=PL9mhQYIlKEheVMo9pVitEm4dJG9i3Jrmt&index=2> [ 컴퓨터 알고리즘 이해 2강 - 정렬 알고리즘 | T아카데미 ]
