@@ -450,3 +450,44 @@ return person;
 - 규칙 사용하기, 예를 들어 속성의 이름 앞에 밑줄 "_" 또는 달러 기호 "$"를 붙입니다. 
 - ES2015 WeakMap 사용하기 ( https://fitzgeraldnick.com/2014/01/13/hiding-implementation-details-with-e6-weakmaps.html )
 {: .notice--info}
+
+### 팩토리를 사용한 예제 
+
+```javascript 
+
+class Profiler {
+  constructor(label){
+    this.label = label;
+    this.lastTime = null;
+  }
+
+  start() {
+    this.lastTime = process.hrtime();
+  }
+
+  end() {
+    const diff = process.hrtime(this.lastTime);
+    console.log(`Timer "${this.label}" took ${diff[0]} seconds and ${diff[1]} nanoseconds.`);
+  }
+}
+
+```
+
+- JavaScript의 동적형 결정(dynamic typing)덕분에 한편으로는 new 연산자로 인스턴스화된 객체를, 다른 편으로는 간단한 객체 리터럴을 반환할 수 있다는 것 
+
+```javascript
+
+module.exports = function(label){
+  if(process.env.NODE_ENV === 'developmen'){
+    return new Profiler(label); // [1]
+  } else if(process.env.NODE_ENV === 'production'){
+    return { // [2]
+      start : function() {},
+      end : function() {}
+    }
+  } else {
+    throw new Error("Must Set NODE ENV");
+  }
+}
+
+```
