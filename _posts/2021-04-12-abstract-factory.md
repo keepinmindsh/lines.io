@@ -491,3 +491,24 @@ module.exports = function(label){
 }
 
 ```
+
+우리의 팩토리는 완벽하게 동작합니다. 팩토리 함수를 사용하여 어떤 방식으로든 객체를 생성할 수 있으며, 추가적인 초기화 단계를 수행하거나 특정 조건을 기반으로 다른 유형의 객체를 반환할 수 있습니다. 그리고 이 모든 세부사항을 객체의 소비자로부터 격리할 수 있습니다. 
+
+```javascript
+
+const profiler = require('./profiler')
+
+function getRandomArray(len) {
+  const p = profiler('Generating a ' + len + ' items long array');
+  p.start();
+  const arr = [];
+  for(let i = 0; i < len; i ++){
+    arr.push(Math.random());
+  }
+  p.end();
+}
+
+getRandomArray(1e6);
+console.log("Done");
+
+```
