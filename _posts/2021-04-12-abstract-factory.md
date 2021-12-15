@@ -512,3 +512,5 @@ getRandomArray(1e6);
 console.log("Done");
 
 ```
+
+### 합성 가능한 팩토리 함수 

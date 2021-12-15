@@ -240,3 +240,8 @@ Assigned to {Someone} by {BugTracker}
 ### Duck Typing ( 덕 타이핑 )
 
 - 오리처럼 걷고 소리내면 그건 분명 오리라고 결정한다. 즉, 오리가 아니더라도 오리의 행동을 하면 오리라고 하는것이다.
+
+### Stampit 
+
+- https://www.npmjs.com/package/stampit
+  - 재사용 가능하고, 구조화를 위한 객채 생성 npm package - stampit
