@@ -514,3 +514,89 @@ console.log("Done");
 ```
 
 ### 합성 가능한 팩토리 함수 
+
+향상된 팩토리 함수를 만들기 위해 함께 "조합"될 수 있는 특정 유형의 팩토리 함수를 말합니다. 
+
+```javascript
+
+const stampit = require('stampit')
+
+const character = stampit().
+                    props({
+                      name : 'anonymous',
+                      lifePoints : 100,
+                      x : 0, 
+                      y : 0
+                    })
+
+```
+
+```javascript 
+
+const c = character();
+c.name = 'John';
+c.lifePoints = 10;
+console.log(c); // { name : 'John' , lifePoints : 10, x : 0, y : 0 }
+
+```
+
+```javascript
+
+const mover = stampit()
+    .methods({
+      move(xIncr, yIncr) {
+        this.x += xIncr;
+        this.y += yIncr;
+        console.log(`${this.name} moved to [${this.x}, ${this.y}]`);
+      }
+    });
+
+const slasher = stampit()
+    .methods({
+      slash(direction) {
+        console.log(`${this.name} slashed to the ${direction}`);
+      }
+    });
+
+const shooter = stampit()
+    .props({
+      bullets : 6
+    })
+    .methods({
+      shoot(direction){
+        if(this.bullets > 0 ){
+            -- this.bullets;
+            console.log(`${this.name} shoot to the ${direction}`);
+        }
+      }
+    })
+
+```
+
+위의 코드를 바탕으로 객체를 합성하면, 
+
+```javascript 
+
+const runner = stampit.compose(character, mover);
+const samurai = stampit.compose(character, mover, slasher);
+const sniper = stampit.compose(character, shooter);
+const gunslinger = stampit.compose(character, mover, shooter);
+const westernSamurai = stampit.compose(gunslinger, samurai);
+
+const gojiro = westernSamurai();
+gojiro.name = 'Gojiro Kiryu';
+gojiro.move(1,0);
+gojiro.slash('left');
+gojiro.shoot('right');
+
+```
+
+### 실정에서의 활용 예제 
+
+- Dnode(https://npmjs.org/package/dnode)
+- Restify(https://npmjs.org/package/restify)
+- http-proxy
+- 코어 Node.js HTTP 서버 
+- bunyan (https://npmjs.org/package/bunyan)
+- react-stampit(https://www.npmjs.com/package/react-stampit)
+- remitter(https://www.npmjs.com/package/remitter) , pub/sub 기반 
