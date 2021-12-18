@@ -450,3 +450,85 @@ return person;
 - 규칙 사용하기, 예를 들어 속성의 이름 앞에 밑줄 "_" 또는 달러 기호 "$"를 붙입니다. 
 - ES2015 WeakMap 사용하기 ( https://fitzgeraldnick.com/2014/01/13/hiding-implementation-details-with-e6-weakmaps.html )
 {: .notice--info}
+
+
+### Kotlin - Abstract Factory
+
+```kotlin
+
+package bong.lines.patterns.abstractfactory.code
+
+enum class UnitType {
+    MARINE,
+    MEDIC
+}
+
+```
+
+```kotlin
+
+package bong.lines.patterns.abstractfactory.unit.inf
+
+interface Unit {
+    fun checkStatus();
+}
+
+package bong.lines.patterns.abstractfactory.unit
+
+import bong.lines.patterns.abstractfactory.unit.inf.Unit
+
+class Marine : Unit {
+    override fun checkStatus() {
+        print("Marine Status is Good!")
+    }
+}
+
+package bong.lines.patterns.abstractfactory.unit
+
+import bong.lines.patterns.abstractfactory.unit.inf.Unit
+
+class Medic : Unit {
+    override fun checkStatus() {
+        print("Medic Status is good")
+    }
+}
+
+package bong.lines.patterns.abstractfactory.building
+
+import bong.lines.patterns.abstractfactory.code.UnitType
+import bong.lines.patterns.abstractfactory.unit.Marine
+import bong.lines.patterns.abstractfactory.unit.Medic
+import bong.lines.patterns.abstractfactory.unit.inf.Unit
+
+class Barrack {
+    fun create(unitType: UnitType) : Unit {
+        return when(unitType){
+            UnitType.MARINE -> Marine()
+            UnitType.MEDIC -> Medic()
+        }
+    }
+}
+
+```
+
+```kotlin
+
+package bong.lines.patterns.abstractfactory
+
+import bong.lines.patterns.abstractfactory.building.Barrack
+import bong.lines.patterns.abstractfactory.code.UnitType
+import bong.lines.patterns.abstractfactory.unit.inf.Unit
+
+fun main() {
+    var marine: Unit = Barrack().create(UnitType.MARINE)
+
+    marine.checkStatus()
+
+    println()
+
+    var medic: Unit = Barrack().create(UnitType.MEDIC)
+
+    medic.checkStatus()
+}
+
+```
