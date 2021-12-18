@@ -451,8 +451,157 @@ return person;
 - ES2015 WeakMap 사용하기 ( https://fitzgeraldnick.com/2014/01/13/hiding-implementation-details-with-e6-weakmaps.html )
 {: .notice--info}
 
+### 팩토리를 사용한 예제 
 
-### Kotlin - Abstract Factory
+```javascript 
+
+class Profiler {
+  constructor(label){
+    this.label = label;
+    this.lastTime = null;
+  }
+
+  start() {
+    this.lastTime = process.hrtime();
+  }
+
+  end() {
+    const diff = process.hrtime(this.lastTime);
+    console.log(`Timer "${this.label}" took ${diff[0]} seconds and ${diff[1]} nanoseconds.`);
+  }
+}
+
+```
+
+- JavaScript의 동적형 결정(dynamic typing)덕분에 한편으로는 new 연산자로 인스턴스화된 객체를, 다른 편으로는 간단한 객체 리터럴을 반환할 수 있다는 것 
+
+```javascript
+
+module.exports = function(label){
+  if(process.env.NODE_ENV === 'developmen'){
+    return new Profiler(label); // [1]
+  } else if(process.env.NODE_ENV === 'production'){
+    return { // [2]
+      start : function() {},
+      end : function() {}
+    }
+  } else {
+    throw new Error("Must Set NODE ENV");
+  }
+}
+
+```
+
+우리의 팩토리는 완벽하게 동작합니다. 팩토리 함수를 사용하여 어떤 방식으로든 객체를 생성할 수 있으며, 추가적인 초기화 단계를 수행하거나 특정 조건을 기반으로 다른 유형의 객체를 반환할 수 있습니다. 그리고 이 모든 세부사항을 객체의 소비자로부터 격리할 수 있습니다. 
+
+```javascript
+
+const profiler = require('./profiler')
+
+function getRandomArray(len) {
+  const p = profiler('Generating a ' + len + ' items long array');
+  p.start();
+  const arr = [];
+  for(let i = 0; i < len; i ++){
+    arr.push(Math.random());
+  }
+  p.end();
+}
+
+getRandomArray(1e6);
+console.log("Done");
+
+```
+
+### 합성 가능한 팩토리 함수 
+
+향상된 팩토리 함수를 만들기 위해 함께 "조합"될 수 있는 특정 유형의 팩토리 함수를 말합니다. 
+
+```javascript
+
+const stampit = require('stampit')
+
+const character = stampit().
+                    props({
+                      name : 'anonymous',
+                      lifePoints : 100,
+                      x : 0, 
+                      y : 0
+                    })
+
+```
+
+```javascript 
+
+const c = character();
+c.name = 'John';
+c.lifePoints = 10;
+console.log(c); // { name : 'John' , lifePoints : 10, x : 0, y : 0 }
+
+```
+
+```javascript
+
+const mover = stampit()
+    .methods({
+      move(xIncr, yIncr) {
+        this.x += xIncr;
+        this.y += yIncr;
+        console.log(`${this.name} moved to [${this.x}, ${this.y}]`);
+      }
+    });
+
+const slasher = stampit()
+    .methods({
+      slash(direction) {
+        console.log(`${this.name} slashed to the ${direction}`);
+      }
+    });
+
+const shooter = stampit()
+    .props({
+      bullets : 6
+    })
+    .methods({
+      shoot(direction){
+        if(this.bullets > 0 ){
+            -- this.bullets;
+            console.log(`${this.name} shoot to the ${direction}`);
+        }
+      }
+    })
+
+```
+
+위의 코드를 바탕으로 객체를 합성하면, 
+
+```javascript 
+
+const runner = stampit.compose(character, mover);
+const samurai = stampit.compose(character, mover, slasher);
+const sniper = stampit.compose(character, shooter);
+const gunslinger = stampit.compose(character, mover, shooter);
+const westernSamurai = stampit.compose(gunslinger, samurai);
+
+const gojiro = westernSamurai();
+gojiro.name = 'Gojiro Kiryu';
+gojiro.move(1,0);
+gojiro.slash('left');
+gojiro.shoot('right');
+
+```
+
+### 실정에서의 활용 예제 
+
+- Dnode(https://npmjs.org/package/dnode)
+- Restify(https://npmjs.org/package/restify)
+- http-proxy
+- 코어 Node.js HTTP 서버 
+- bunyan (https://npmjs.org/package/bunyan)
+- react-stampit(https://www.npmjs.com/package/react-stampit)
+- remitter(https://www.npmjs.com/package/remitter) , pub/sub 기반 
+
+# Kotlin - Abstract Factory
 
 ```kotlin
 
