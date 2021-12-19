@@ -16,7 +16,23 @@ last_modified_at: 2021-12-16T08:57:00-21:55:00
 
 ***
 
-##### git Lab에서 origin의 feature branch를 삭제할  경우 
+##### git merge 하기 
+
+![](https://keepinmindsh.github.io/lines/assets/img/git_0007.png){: .align-center} 
+
+```shell
+
+git petch origin 
+
+git switch main
+
+git merge --no-ff develop
+
+git push origin main 
+
+```
+
+##### git에서 origin의 feature branch를 삭제할  경우 
 
 ![](https://keepinmindsh.github.io/lines/assets/img/git_0001.png){: .align-center} 
 
