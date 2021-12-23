@@ -90,6 +90,8 @@ git checkout -b {branch명}  -> Branch 가져와서 세팅하기
 
 ```
 
+git merge 샘플 코드 
+
 ```shell
 
 D:\01_Sources\02_GIT\sample (develop -> origin)
