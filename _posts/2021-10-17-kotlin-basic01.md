@@ -147,6 +147,7 @@ class Rectangle (var height: Double, var length: Double) {
 - 상속은 : 의해서 정의할 수 있다. 
 - 기본적으로 class는 final 로 인식되기 때문에 상속할 수 없는데, 외부 공개를 위해서 open을 정의해야 한다. 
 
+
 ```kotlin
 
 open class Shape
@@ -156,6 +157,12 @@ class Rectangle (var height: Double, var length: Double) : Shape() {
 }
 
 ```
+
+- open  
+자바에서는 클래스에 final이 붙지 않으면 모두 다른 클래스에서 상속이 가능합니다.  
+하지만 코틀린에서의 클래스와 메서드는 기본적으로 final입니다.  
+따라서 어떤 클래스의 상속을 허용하려면 해당 클래스 앞에 open 변경자를 붙여야 합니다. 그와 더불어 오버라이드를 허용하고 싶은 메서드나 프로퍼티의 앞에도 open 변경자를 붙여야 합니다.  
+
 
 **String Templates** 
 
@@ -349,6 +356,13 @@ fun collectionWithIn(){
     }
 }
 
+```
+
+- https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/#kotlin.collections.List
+
+List에서 제공하는 메소드 정의
+
+```kotlin
 
 fun collectionWithFilterMapLoop(){
     val fruits = listOf("banana", "avocado", "apple", "kiwifruit")
@@ -610,6 +624,8 @@ class XValue {
 ```
 
 **Read-only DataStructure** 
+
+- https://kumgo1d.tistory.com/53
 
 ```kotlin
 
