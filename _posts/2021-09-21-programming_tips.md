@@ -281,7 +281,6 @@ Assigned to {Someone} by {BugTracker}
  - Budgeting : 예산편성
  - Profit analysis : 손익분석(마진, 손익계산서 등)
  - Forecasting : 매출예상
-
  > https://blog.naver.com/PostView.naver?blogId=ispooh96&logNo=221871059411&parentCategoryNo=&categoryNo=31&viewDate=&isShowPopularPosts=true&from=search
 
 **주로 계획과 분석업무 분야
