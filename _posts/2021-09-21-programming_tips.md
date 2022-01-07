@@ -266,3 +266,23 @@ Assigned to {Someone} by {BugTracker}
 유지 보수 릴리스는 새로운 기능이나 컨텐츠를 추가하지 않는 제품 릴리스입니다. 예를 들어, 컴퓨터 소프트웨어에서 유지 관리 릴리스는 일반적으로 "버그"또는 보안 문제와 같은 사소한 문제를 해결하기위한 것입니다.
 
 말그대로 Maintenance 라는게 유지보수 정비의 건, Smart Phone으로 치자면 이미 나와 있는 펌웨어에 추가적인 버그수정, 기존 마이너한 이슈 수정, 예를 들면 Bluetooth 기능개선 이런것들을 검증하는 차수라 볼 수 있는것
+
+### Controllership - 주로 회계업무담당
+ - AR(Account Recievable) : 매출채권회계
+ - AP(Account Payable) : 매입채무회계
+ - Treasury : 현금 및 현금성 자산
+ - Tax : 세무
+ - 기타 직원경비처리, 재고자산 및 고정자산관리 등
+
+**최근 외국계기업의 경우 반복적인 회계업무는 Shared Service로 이관한다고 함(외주의미)
+
+### FP&A(Financial Planning & Analysis)
+
+ - Budgeting : 예산편성
+ - Profit analysis : 손익분석(마진, 손익계산서 등)
+ - Forecasting : 매출예상
+
+ > https://blog.naver.com/PostView.naver?blogId=ispooh96&logNo=221871059411&parentCategoryNo=&categoryNo=31&viewDate=&isShowPopularPosts=true&from=search
+
+**주로 계획과 분석업무 분야
+
