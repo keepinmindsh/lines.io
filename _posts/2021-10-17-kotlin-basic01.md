@@ -22,13 +22,13 @@ last_modified_at: 2021-10-22T17:31:00-21:55:00
 
  - 문장의 마지막에 정의하는 마침표, 세미 콜론 불필요함. 
 
-##### 코드 샘플
+### 코드 샘플
 
-**Package definition / imports**  
+##### **Package definition / imports**  
 
 - Package 의 정의는 반드시 소스 상단에 정의되어야 한다.
 
-**Program entry point**  
+##### **Program entry point**  
 
 - Kotlin의 메인 진입점은 main 함수로 정의되고, 정의 방식은 아래와 같다.
 
@@ -55,10 +55,10 @@ suspend fun main() = coroutineScope {
 }
 ```
 
-**표준 출력**   
+##### **표준 출력**   
 
 ```kotlin
-package bong.lines.standard_output
+package bong.lines.basic.standard_output
 
 fun main(){
     standardOutputPrint()
@@ -66,7 +66,7 @@ fun main(){
 ```
 
 ```kotlin
-package bong.lines.standard_output
+package bong.lines.basic.standard_output
 
 fun standardOutputPrint() {
     print("Hello ")
@@ -74,7 +74,7 @@ fun standardOutputPrint() {
 }
 ```
 
-**Functions**  
+##### **Functions**  
 
 ```kotlin
 
@@ -94,7 +94,7 @@ fun printSum(a: Int, b: Int): Unit {
 
 ```
 
-**Variables**  
+##### **Variables**  
 
 - val : read-only 의 로컬 변수, 오직 단 한번만 값에 대해서 할당이 가능하다.  
 - var : 재할당이 가능한 로컬 변수 
@@ -125,7 +125,31 @@ fun incrementX() {
 
 ```
 
-**Classes**  
+Properties에서 사용될 때,    
+
+Kotlin의 클래스에서 프로퍼티는 Mutable(변경가능 - var) 또는 Read-Only(읽기전용 - val)로 사용 가능하다.  
+
+```kotlin
+
+class Address {
+    var name: String = "Holmes, Sherlock"
+    var street: String = "Baker"
+    var city: String = "London"
+    var state: String? = null
+    var zip: String = "123456"
+}
+
+fun copyAddress(address: Address): Address {
+    val result = Address() // there's no 'new' keyword in Kotlin
+    result.name = address.name // accessors are called
+    result.street = address.street
+    // ...
+    return result
+}
+
+```
+
+##### **Classes**  
 
 - 클래스가 정의되는 시점에 파라미터를 Class와 함께 정의가 가능하다.
 
@@ -147,7 +171,6 @@ class Rectangle (var height: Double, var length: Double) {
 - 상속은 : 의해서 정의할 수 있다. 
 - 기본적으로 class는 final 로 인식되기 때문에 상속할 수 없는데, 외부 공개를 위해서 open을 정의해야 한다. 
 
-
 ```kotlin
 
 open class Shape
@@ -158,13 +181,47 @@ class Rectangle (var height: Double, var length: Double) : Shape() {
 
 ```
 
-- open  
-자바에서는 클래스에 final이 붙지 않으면 모두 다른 클래스에서 상속이 가능합니다.  
-하지만 코틀린에서의 클래스와 메서드는 기본적으로 final입니다.  
-따라서 어떤 클래스의 상속을 허용하려면 해당 클래스 앞에 open 변경자를 붙여야 합니다. 그와 더불어 오버라이드를 허용하고 싶은 메서드나 프로퍼티의 앞에도 open 변경자를 붙여야 합니다.  
+- class 생성시, 
 
+```kotlin
 
-**String Templates** 
+class Sample2(firstName: String){
+    val firstProperty = "First property: $firstName".also(::println)
+
+    init {
+        println("First initializer block that prints $firstName")
+    }
+
+    val secondProperty = "Second property: ${firstName.length}".also(::println)
+
+    init {
+        println("Second initializer block that prints ${firstName.length}")
+    }
+}
+
+```
+
+- class에서 다중 supertype을 지정하고, 할당받는 변수의 타입에 따라 특정 supertype에 맞춰 호출할 수 있음
+
+```kotlin
+
+open class A(x: Int) {
+    public open val y: Int = x
+}
+
+interface B {
+    fun calculate() : Int
+}
+
+val ab: B = object : A(1), B {
+    override val y = 15
+
+    override fun calculate(): Int = y * 400
+}
+
+```
+
+##### **String Templates** 과 문자열 처리
 
 - 문자열 템플릿의 경우, "" 내에서 달러 표시 및 {} 의해서 코틀린 문법 및 변수를 매핑할 수 있다. 
 - 문자열 템플릿이 자바에 비해 직관적으로 바인딩 및 표시가 가능하다. 
@@ -172,6 +229,20 @@ class Rectangle (var height: Double, var length: Double) : Shape() {
 ```kotlin
 
 fun main() {
+    StringTemplate()
+
+    forLoopForEachStringCharacter()
+
+    applyUppercase()
+
+    stringLiteral()
+
+    trimMargin()
+
+    displayPrice()
+}
+
+private fun StringTemplate() {
     var a = "1"
 
     var s1 = "a is $a"
@@ -183,16 +254,60 @@ fun main() {
     println(s2)
 }
 
+fun forLoopForEachStringCharacter(){
+    val str = "abcd 123"
+
+    for (c in str) {
+        println(c)
+    }
+}
+
+fun applyUppercase(){
+    val str = "abcd"
+    println(str.uppercase()) // Create and print a new String object
+    println(str) // the original string remains the same
+}
+
+fun stringLiteral(){
+    val text = """
+    for (c in "foo")
+        print(c)
+"""
+
+    println(text)
+}
+
+fun trimMargin(){
+    val text = """
+    |Tell me and I forget.
+    |Teach me and I remember.
+    |Involve me and I learn.
+    |(Benjamin Franklin)
+    """.trimMargin()
+
+    println(text)
+}
+
+fun displayPrice(){
+    val price = """
+${'$'}_9.99
+"""
+
+    println(price)
+}
 ```
 
+##### **Conditional Expression**
 
-**Conditional Expression**
+- 함수를 정의하는 시점에 if-else 내에 추가적인 처리 없이 하나의 값을 반환할 때는 {} 없이 선언 및 사용이 가능하다. 
 
 ```kotlin
 fun main() {
     println(maxOf1(10, 20))
 
     println(maxOf2(10, 20))
+
+    println(maxOf3(30,40))
 }
 
 fun maxOf1(a: Int, b:Int) = if ( a > b ) a else b
@@ -204,16 +319,41 @@ fun maxOf2(a: Int, b: Int): Int {
         return b
     }
 }
+
+fun maxOf3(a: Int, b: Int): Int {
+    val max = if (a > b) {
+        print("Choose a")
+        a
+    } else {
+        print("Choose b")
+        b
+    }
+
+    return max
+}
 ```
 
-**For Loop**    
+##### **For Loop**
+
+ - for loop를 사용하는 방식 
+   - downTo, step, until 
 
 ```kotlin
 
 fun main() {
     forLoopLogic()
 
-    forLoopLogics2()
+    forLoopLogic2()
+
+    forLoopLogic3()
+    
+    println()
+
+    forLoopLogic4()
+
+    println()
+
+    forLoopLogic5()
 }
 
 fun forLoopLogic(){
@@ -224,17 +364,34 @@ fun forLoopLogic(){
     }
 }
 
-fun forLoopLogics2(){
+fun forLoopLogic2(){
     val items = listOf("apple", "banana", "kiwifruit")
     for (index in items.indices) {
         println("item at $index is ${items[index]}")
     }
 }
 
+fun forLoopLogic3(){
+    var index = 30
+    for ( i in 1..index)
+        print(i)
+}
+
+fun forLoopLogic4(){
+    var index = 30
+    for ( i in 1..index step 3)
+        print(i)
+}
+
+fun forLoopLogic5(){
+    var index = 30
+    for ( i in index downTo 1 step 2)
+        print(i)
+}
 
 ```
 
-**While Loop**
+##### **While Loop**
 
 ```kotlin
 
@@ -253,7 +410,7 @@ fun whileLoopLogic(){
 
 ```
 
-**When Expression**
+##### **When Expression**
 
 ```kotlin
 
@@ -276,10 +433,10 @@ fun describe(obj: Any): String =
 
 ```
 
-**Ranges**  
+##### **Ranges**  
 
 ```kotlin
-    
+
 fun main() {
     rangeLogic()
 
@@ -288,6 +445,10 @@ fun main() {
     rangeWithIterator()
 
     rangeWithProgression()
+
+    println()
+
+    rangeWithClass()
 }
 
 fun rangeLogic(){
@@ -327,9 +488,24 @@ fun rangeWithProgression(){
     }
 }
 
+fun rangeWithClass(){
+    val versionRange = Version(1, 11)..Version(1, 30)
+    println(Version(0, 9) in versionRange)
+    println(Version(1, 20) in versionRange)
+}
+
+class Version(val major: Int, val minor: Int): Comparable<Version> {
+    override fun compareTo(other: Version): Int {
+        if (this.major != other.major) {
+            return this.major - other.major
+        }
+        return this.minor - other.minor
+    }
+}
+
 ```
 
-**Collections**
+##### **Collections**
 
 ```kotlin
 
@@ -356,13 +532,6 @@ fun collectionWithIn(){
     }
 }
 
-```
-
-- https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/#kotlin.collections.List
-
-List에서 제공하는 메소드 정의
-
-```kotlin
 
 fun collectionWithFilterMapLoop(){
     val fruits = listOf("banana", "avocado", "apple", "kiwifruit")
@@ -375,7 +544,7 @@ fun collectionWithFilterMapLoop(){
 
 ```
 
-**Null Value/Check**   
+##### **Null Value/Check**   
 
 ```kotlin
 
@@ -429,7 +598,7 @@ fun main() {
 
 ```
 
-**Type Check**      
+##### **Type Check**      
 
 ```kotlin
 
@@ -520,7 +689,8 @@ fun main() {
     println(dataVar2.hashCode())
     println(dataVar2.toString())
 
-    // Destructuring Value - 변수를 data class 에서 가져올 때, 해당 객채에서 각각의 변수를 구조 분해 할당 방식으로 아래 코드와 같이 가져올 수 있다. 우리나라 말로는 좀 어려운 뜻으로 느껴지네..
+    // Destructuring Value
+    // 변수를 data class 에서 가져올 때, 해당 객채에서 각각의 변수를 구조 분해 할당 방식으로 아래 코드와 같이 가져올 수 있다. 우리나라 말로는 좀 어려운 뜻으로 느껴지네..
     val ( a, b ) = sample
     println(a)
     println(b)
@@ -533,8 +703,7 @@ fun main() {
 
 ```
 
-
-**Default Value**   
+**Default Value**  
 
 
 ```kotlin
@@ -551,7 +720,7 @@ fun foo(a : Int = 10, b: String = ""):String{
 
 ``` 
 
-**Filter**   
+**Filter** 
 
 ```kotlin
 
@@ -567,7 +736,7 @@ println("$filteredListValues is a List")
 
 ```
 
-**Check Presence of en element in a collection**  
+**Check Presence of en element in a collection**
 
 ```kotlin
 
@@ -585,7 +754,7 @@ fun main() {
 
 ```
 
-**String Interpolation**  
+**String Interpolation**
 
 ```kotlin
 
@@ -624,8 +793,6 @@ class XValue {
 ```
 
 **Read-only DataStructure** 
-
-- https://kumgo1d.tistory.com/53
 
 ```kotlin
 
