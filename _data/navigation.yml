@@ -99,3 +99,5 @@ k8s:
     children:
       - title: "쿠버네티스의 이해"
         url: /k8s/k8s-001/ 
+      - title: "Container 의 이해 ( feat. Docker )"
+        url: /k8s/k8s-002/
