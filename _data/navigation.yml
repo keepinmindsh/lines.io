@@ -98,4 +98,4 @@ k8s:
   - title: Kubernetes 
     children:
       - title: "쿠버네티스의 이해"
-        url: /k8s/k8s-01/ 
+        url: /k8s/k8s-001/ 
