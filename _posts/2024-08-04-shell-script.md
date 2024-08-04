@@ -20,7 +20,7 @@ sidebar:
 
 서버의 구성은 아래와 같았다. 
 
-~~~mermaid 
+```mermaid 
 sequenceDiagram
     participant ASIS as ASIS Server
     participant Intermediary as Intermediary Server
@@ -30,7 +30,7 @@ sequenceDiagram
     ASIS->>Intermediary: 다운로드한 파일에 대한 변환 처리
     Intermediary->>Intermediary: 파일 변환 
     Intermediary-->>TOBE: 변환 파일 업로드 
-~~~
+```
 
 기본적인 서버 환경을 세팅하고, FTP 서버 접속을 위한 기본 구성 작업을 했습니다. 
 
@@ -42,7 +42,7 @@ sudo apt-get install vsftpd
 
 이후 아래의 처리절차에 따라서 Shell Script를 작성해봤어요. 
 
-~~~mermaid
+```mermaid
 sequenceDiagram
     participant ASIS as ASIS Server
     participant Intermediary as Intermediary Server
@@ -58,7 +58,7 @@ sequenceDiagram
     Intermediary->>Intermediary: tar.gz 압축 
     Intermediary-->>TOBE: 변환 파일 업로드 
     Intermediary->>Intermediary: temp 및 zip 파일 제거
-~~~
+```
 
 각 파일 목록을 다운로드 받은 이후에 10만 라인 단위로 파일을 분리하여 백그라운드로 쉘을 돌렸습니다. 
 
