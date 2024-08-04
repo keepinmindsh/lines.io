@@ -58,6 +58,7 @@ sequenceDiagram
     Intermediary->>Intermediary: tar.gz 압축 
     Intermediary-->>TOBE: 변환 파일 업로드 
     Intermediary->>Intermediary: temp 및 zip 파일 제거
+    Intermediary->>Intermediary: complete_list 생성 
 ```
 
 각 파일 목록을 다운로드 받은 이후에 10만 라인 단위로 파일을 분리하여 백그라운드로 쉘을 돌렸습니다. 
