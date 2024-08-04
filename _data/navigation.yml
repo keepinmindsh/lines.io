@@ -101,3 +101,9 @@ k8s:
         url: /k8s/k8s-001/ 
       - title: "Container 의 이해 ( feat. Docker )"
         url: /k8s/k8s-002/
+
+
+shell: 
+  - title: Shell
+    children:
+      - title: "Shell Script 작성 후기"
