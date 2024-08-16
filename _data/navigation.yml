@@ -107,3 +107,9 @@ shell:
   - title: Shell
     children:
       - title: "Shell Script 작성 후기"
+        url: /shell/shell-script/
+
+network: 
+  - title: Things
+    children:
+      - title: "인간관계"
