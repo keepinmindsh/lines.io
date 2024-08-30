@@ -1,5 +1,5 @@
 ---
-title: "Elastic Container Service 구성 후기"
+title: "Elastic Container Service 구성 후기 1편"
 excerpt: "aws"
 
 categories:
@@ -34,7 +34,7 @@ sidebar:
 
 - Image 빌드 및 업로드 
   - 이미지의 경우에는 Docker Build시 플랫폼을 정확히 확인해야 한다. 
-  - 만약 초기 테스트시 MacOS를 사용하는 경우 arm64로 빌드가 되기 때문에 amd64 계열에서는 정상적으로 동작하지 않기 때문에 platform 설정을 해서 필드한다.  
+  - 만약 초기 테스트시 MacOS를 사용하는 경우 arm64로 빌드가 되기 때문에 amd64 계열에서는 정상적으로 동작하지 않기 때문에 platform 설정을 해서 빌드한다.  
 - ECS 구성 
   - Cluster 구성  
   - Task 정의 
