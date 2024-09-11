@@ -30,7 +30,6 @@ ECS와 GitAction을 이용해서 기초적인 CI/CD를 구현하면서, 아래�
 # GitHub recommends pinning actions to a commit SHA.
 # To get a newer version, you will need to update the SHA.
 # You can also reference a tag or branch, but the action may change without warning.
-
 name: Deploy to Amazon ECS
 
 on:
