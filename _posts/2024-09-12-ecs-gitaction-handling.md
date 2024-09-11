@@ -3,13 +3,11 @@ title: "ECS와 GitAction을 이용한 서비스 배포"
 excerpt: "cicd"
 
 categories:
-  - cicd
+  - CICD
 tags:
-  - cicd
+  - CICD 
 classes: wide
 last_modified_at: 2023-09-12T07:45:00-11:00
-sidebar:
-  nav: "cicd"
 ---
 
 - [GitHub Action 작업 명세](#github-action-작업-명세)
