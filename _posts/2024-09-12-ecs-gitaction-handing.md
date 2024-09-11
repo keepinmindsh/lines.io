@@ -113,13 +113,13 @@ jobs:
     - Lifecycle Policy도 설정하는게 좋다. 
   - 아래의 이미지 경로가 위의 세팅 파일에서 {Amazone Elastic Container Registry의 경로}의 경로가 되어야 한다. 
 
-![](https://keepinmindsh.github.io/lines/assets/img/ecr.png)
+![ECR 설정](https://keepinmindsh.github.io/lines/assets/img/ecr.png)
 
 ## AWS 접근을 위한 Secret / Access Key 생성 
 
 아래의 이미지에서 보여지는 것처럼, 시크릿 및 액세스 키를 Repo > Settings > Secrets and variables > Actions 에서 등록 가능합니다. 
 
-![](https://keepinmindsh.github.io/lines/assets/img/secret_gitactions.png)
+![GitAction Setting](https://keepinmindsh.github.io/lines/assets/img/secret_gitactions.png)
 
 
 ## ECS 배포는 Task를 기반으로 Git Action에서 프로세스가 동작한다. 
@@ -135,5 +135,5 @@ jobs:
     - 교체 방법은 기본적으로는 Rolling Update이며, 
     - 만약 Blue/Green 배포 방식을 적용하고 싶을 경우 추가적인 설정이 필요하다.  
 
-![](https://keepinmindsh.github.io/lines/assets/img/ecs_task.png)
+![ECS 태스크 정의](https://keepinmindsh.github.io/lines/assets/img/ecs_task.png)
 
