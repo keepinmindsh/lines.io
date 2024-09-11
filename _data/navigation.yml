@@ -118,8 +118,14 @@ aws:
   - title: AWS
     children:
       - title: "Elastic Container Service 구성 후기"
+        url: /aws/ecs-handling-1/
 
 airflow:
   - title: Airflow
     children:
       - title: "Apache Airflow 배우기"
+
+cicd:
+  - title: CICD
+    children:
+      - title: "ECS와 GitAction를 활용한 서비스 배포"
