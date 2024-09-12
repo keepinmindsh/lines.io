@@ -3,11 +3,13 @@ title: "ECS와 GitAction을 이용한 서비스 배포"
 excerpt: "cicd"
 
 categories:
-  - CICD
+  - aws
 tags:
-  - CICD 
+  - aws
 classes: wide
-last_modified_at: 2023-09-12T07:45:00-11:00
+last_modified_at: 2023-08-04T14:21:00-14:51
+sidebar:
+  nav: "aws"
 ---
 
 - [GitHub Action 작업 명세](#github-action-작업-명세)
