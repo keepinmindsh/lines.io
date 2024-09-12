@@ -43,7 +43,7 @@ env:
   ECS_SERVICE:  {Elastic Container Service Name}                # set this to your Amazon ECS service name
   ECS_CLUSTER: {Elastic Container Cluster}                 # set this to your Amazon ECS cluster name
   ECS_TASK_DEFINITION: .aws/task-definition.json # set this to the path to your Amazon ECS task definition
-  CONTAINER_NAME: repair-backend-container           # set this to the name of the container in the
+  CONTAINER_NAME: {Task Definition에 정의된 컨테이너 명칭}           # set this to the name of the container 
 
 jobs:
   deploy:
