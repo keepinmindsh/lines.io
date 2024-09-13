@@ -5,7 +5,7 @@ excerpt: "infra"
 categories:
   - infra
 tags:
-  - ainfraws
+  - infra
 classes: wide
 last_modified_at: 2023-09-13T07:35:00-10:00
 sidebar:
