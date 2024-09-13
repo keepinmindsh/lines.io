@@ -114,6 +114,10 @@ airflow:
     children:
       - title: "Apache Airflow 배우기"
         url: /airflow/airflow-01/
+infra:
+  - title: Infra
+    children:
+      - title: "Open Infra Summit"
 cicd:
   - title: CICD
     children:
