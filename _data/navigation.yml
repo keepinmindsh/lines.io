@@ -118,6 +118,11 @@ infra:
   - title: Infra
     children:
       - title: "Open Infra Summit"
+ai:
+  - title: AI
+    children:
+      - title: 
+        url: 
 cicd:
   - title: CICD
     children:
