@@ -25,7 +25,7 @@ last_modified_at: 2024-10-04T14:34:00-15:35:00
 여기에서 불변성은 기존 객체의 값을 유지하게 하여 사이드 이펙트를 최소화하고, 신규 변경된 객체의 참조 값만을 비교해서 실제 값으로 변경한다.  
 따라서 원본 객체의 값을 직접적으로 변경하면 React 내에서는 해당 값의 상태 변화를 인지할 수 없습니다.  
 
-- 효율적인 상태 업데이트 ( 얕은 비교 수행 )
+- 효율적인 상태 업데이트
 - 사이드 이펙트 방지 및 프로그래밍 구조의 단순성 
 
 ## 불변성을 유지하며 코드 작성하기 
@@ -37,7 +37,7 @@ const newRegions = [...regions, newRegion]
 ```
 
 ```script 
-const filteredRegions = region.filter(region => user.region === 1);
+const filteredRegions = region.filter(region => region.code === 1);
 console.log(filteredRegions);
 ```
 
